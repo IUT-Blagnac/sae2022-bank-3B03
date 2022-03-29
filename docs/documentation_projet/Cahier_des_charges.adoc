@@ -1,3 +1,25 @@
-= CAHIER DES CHARGES
+:stylesheet: CDCU.css
 
-// A REDIGER
+= CAHIER DES CHARGES
+:nofooter:
+:author: Hugo CASTELL, Gabin MUNOZ et Matéo PEPIN
+:toc: left
+:docdate: 2022-03-29
+:version-label: 1.0
+
+== 1. Présentation du sujet ==
+
+=== 1.1. Contexte ===
+
+=== 1.2. Objectifs ===
+
+== 2. Analyse de l'existant ==
+
+== 3. Analyse des besoins ==
+
+== 4. Analyse des contraintes ==
+
+=== 4.1. Analyse des contraintes ===
+
+Ce document présente le cahier des charges de la SAE 2.01 Développement d'application. +
+Rédigé par {author}.
