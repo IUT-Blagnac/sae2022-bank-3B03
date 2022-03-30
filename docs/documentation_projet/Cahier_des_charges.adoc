@@ -1,11 +1,10 @@
 :stylesheet: CDCU.css
 
 = CAHIER DES CHARGES
+Hugo CASTELL - Gabin MUNOZ - Matéo PEPIN
+v1.0 {localdate}
 :nofooter:
-:author: Hugo CASTELL, Gabin MUNOZ et Matéo PEPIN
 :toc: left
-:docdate: 2022-03-29
-:version-label: 1.0
 
 == 1. Présentation du sujet ==
 
