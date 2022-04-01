@@ -33,8 +33,21 @@ Toutes les documentations seront disponibles sur Github dans un dossier prévu �
 
 
 == 2. Analyse de l'existant ==
+Dans la version existante, le guichetier peut : 
+- Modifier une information client
+- Créer un nouveau client
+** Consulter un compte
+** Débiter un compte
+
+Et le chef d'agence peut :
+** Rendre inactif un client
+
+De plus, il existe déjà le diagramme des UC de la version initiale. 
+
 
 == 3. Analyse des besoins ==
+En partant de la version initiale, les éléments à ajouter sont les suivants :
+
 
 == 4. Analyse des contraintes ==
 
