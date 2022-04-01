@@ -57,13 +57,25 @@ image::usecase_v0.svg[Diagramme, auto, inline, align="center"]
 
 
 
-
-
-
 == 3. Analyse des besoins ==
 En partant de la version initiale, les éléments à ajouter sont les suivants :
+
+Pour le guichetier :
+
+* créer un compte
+* effectuer un virement de compte à compte
+* clôturer un compte
+* créditer un compte
+
++ refaire fonction Java 'débiter'
+
+Chef d'agence :
+
+* Gerer les employés (CRUD)
 
 
 == 4. Analyse des contraintes ==
 
+
 === 4.1. Analyse des contraintes ===
+
