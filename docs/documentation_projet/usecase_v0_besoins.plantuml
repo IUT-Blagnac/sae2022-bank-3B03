@@ -1,5 +1,5 @@
 @startuml usecase_v0_besoins
-
+left to right direction
 skinparam actorStyle awesome
 "Guichetier" as G
 "Chef d'agence" as C

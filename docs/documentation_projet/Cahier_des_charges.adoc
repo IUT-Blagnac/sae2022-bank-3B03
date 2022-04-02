@@ -69,6 +69,8 @@ Chef d'agence :
 
 * Gerer les employés _(CRUD)_
 
+[.text-center]
+image::usecase_v0_besoins.svg[Diagramme, 500, auto]
 
 == 4. Analyse des contraintes ==
 
