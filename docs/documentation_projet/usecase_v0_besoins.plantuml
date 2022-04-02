@@ -1,0 +1,20 @@
+@startuml
+
+skinparam actorStyle awesome
+"Guichetier" as G
+"Chef d'agence" as C
+:G: -> (Modifier infos client)
+:G: -> (Créer un nouveau client)
+:G: -> (Consulter un compte)
+:G: -> (Débiter un compte)
+:G: -> (Créer un nouveau compte)
+:G: -> (Effectuer un virement de compte à compte)
+:G: -> (Clôturer un compte)
+:G: -> (Créditer un compte)
+
+G <|-- C
+
+:C: --> (Rendre inactif un client)
+:C: --> (Gérer les employés : CRUD)
+
+@enduml
