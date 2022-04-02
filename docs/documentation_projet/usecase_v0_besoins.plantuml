@@ -1,4 +1,4 @@
-@startuml
+@startuml usecase_v0_besoins
 
 skinparam actorStyle awesome
 "Guichetier" as G
