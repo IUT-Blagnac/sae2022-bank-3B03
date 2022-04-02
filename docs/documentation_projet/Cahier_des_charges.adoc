@@ -1,10 +1,11 @@
 :stylesheet: CDCU.css
 
-= CAHIER DES CHARGES
+= *CAHIER DES CHARGES*
 Hugo CASTELL - Gabin MUNOZ - Matéo PEPIN
 v1.0 {localdate}
 :nofooter:
 :toc: left
+:toc-title: Sommaire
 
 == 1. Présentation du sujet ==
 
@@ -18,7 +19,7 @@ Les outils utilisés seront : +
 ** Github : Flexibilité de gestion grâce au versionning et aux issues/milestones
 ** Discord : Communication instantanée et channels vocaux
 ** VSCode ou Eclipse pour le développement
-** Google / MS Project (?) pour la gestion de projet
+** MS Project pour la gestion de projet
 
 NOTE: Nous travaillons l'essentiel du temps hors des séances dédiées pour accélérer le rythme de production des documentations et du code. 
 
@@ -33,49 +34,43 @@ Toutes les documentations seront disponibles sur Github dans un dossier prévu �
 
 
 == 2. Analyse de l'existant ==
-Dans la version existante, le guichetier peut : 
-- Modifier une information client
-- Créer un nouveau client
+Dans la version existante, l'utilisateur peut être d'un des status suivants : guichetier ou chef d'agence.
+Dans la version existante, le guichetier peut :
+
+** Modifier une information client
+** Créer un nouveau client
 ** Consulter un compte
 ** Débiter un compte
 
 Et le chef d'agence peut :
+
 ** Rendre inactif un client
 
-De plus, il existe déjà le diagramme des UC de la version initiale. 
-
-
 L'application existante, développée en JAVA, possède déjà une interface graphique. +
+La base de données est déjà implémentée, son modèle est relationnel et elle fonctionne sous SQL3. +
 
-La base de données est déjà implémentée. +
-
-L'utilisateur peut être d'un des status suivants : guichetier ou chef d'agence. +
-
-[#img-sunset]
-.Diagramme des cas d'utilisations
-image::usecase_v0.svg[Diagramme, auto, inline, align="center"]
+[.text-center]
+image::usecase_v0.svg[Diagramme, 400, auto]
 
 
 
 == 3. Analyse des besoins ==
 En partant de la version initiale, les éléments à ajouter sont les suivants :
 
-Pour le guichetier :
+Pour le guichetier : 
 
 * créer un compte
 * effectuer un virement de compte à compte
 * clôturer un compte
 * créditer un compte
-
-+ refaire fonction Java 'débiter'
+* refaire fonction Java .débiter()
 
 Chef d'agence :
 
-* Gerer les employés (CRUD)
+* Gerer les employés _(CRUD)_
 
 
 == 4. Analyse des contraintes ==
 
-
-=== 4.1. Analyse des contraintes ===
+// SQL DEV etc...
 
