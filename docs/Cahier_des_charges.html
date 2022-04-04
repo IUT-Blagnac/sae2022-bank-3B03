@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="author" content="Hugo CASTELL - Gabin MUNOZ - Matéo PEPIN">
+<title>CAHIER DES CHARGES</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#282c34;
+--primarycolor:#f39c12;
+--secondarycolor:#03a9f4;
+--tertiarycolor:#4db6ac;
+--sidebarbackground:#21252b;
+--linkcolor:#f44336;
+--linkcoloralternate:#ff9800;
+--white:#FFFFFF;
+}
+
+/* Text styles */
+
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--white) !important;}
+td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--secondarycolor);
+}
+
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
+}
+</style>
+</head>
+<body class="article toc2 toc-left data-line-1">
+<div id="header">
+<h1><strong>CAHIER DES CHARGES</strong></h1>
+<div class="details">
+<span id="author" class="author">Hugo CASTELL - Gabin MUNOZ - Matéo PEPIN</span><br>
+<span id="revnumber">version 1.0 2022-04-04</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Sommaire</div>
+<ul class="sectlevel1">
+<li><a href="#_1_présentation_du_sujet">1. Présentation du sujet</a>
+<ul class="sectlevel2">
+<li><a href="#_1_1_contexte">1.1. Contexte</a></li>
+<li><a href="#_1_2_objectifs">1.2. Objectifs</a></li>
+</ul>
+</li>
+<li><a href="#_2_analyse_de_lexistant">2. Analyse de l&#8217;existant</a></li>
+<li><a href="#_3_analyse_des_besoins">3. Analyse des besoins</a></li>
+<li><a href="#_4_analyse_des_contraintes">4. Analyse des contraintes</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1 data-line-10">
+<h2 id="_1_présentation_du_sujet">1. Présentation du sujet</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-12">
+<h3 id="_1_1_contexte">1.1. Contexte</h3>
+<div class="paragraph data-line-13">
+<p>La banque DailyBank souhaite développer une application JAVA-Oracle de gestion des comptes clients pour remplacer plusieurs outils obsolètes. Ce développement s’inscrit dans le cadre de la restructuration de ses services bancaires et l’application sera déployée dans les 100 agences que compte son réseau. Vous travaillerez à partir d’une application existante « Daily Bank » qu’il faudra adapter aux nouveaux besoins de la banque.<br></p>
+</div>
+<div class="paragraph data-line-15">
+<p>Dans le cadre universitaire, la SAE 2.01 Développement d&#8217;application met en oeuvre les compétences de gestion de projet, de développement algorithmique, de gestion de base de données et de développement d&#8217;interface IHM des élèves.<br></p>
+</div>
+<div class="paragraph data-line-17">
+<p>Les outils utilisés seront :<br></p>
+</div>
+<div class="ulist data-line-19">
+<ul>
+<li class="data-line-19">
+<p>Github : Flexibilité de gestion grâce au versionning et aux issues/milestones</p>
+</li>
+<li class="data-line-20">
+<p>Discord : Communication instantanée et channels vocaux</p>
+</li>
+<li class="data-line-21">
+<p>VSCode ou Eclipse pour le développement</p>
+</li>
+<li class="data-line-22">
+<p>MS Project pour la gestion de projet</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note data-line-24">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Nous travaillons l&#8217;essentiel du temps hors des séances dédiées pour accélérer le rythme de production des documentations et du code.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-26">
+<p>Notre équipe est composée d&#8217;un chef de projet, Gabin MUNOZ, et de deux autres membres, Hugo CASTELL et Matéo PEPIN.<br></p>
+</div>
+</div>
+<div class="sect2 data-line-28">
+<h3 id="_1_2_objectifs">1.2. Objectifs</h3>
+<div class="paragraph data-line-29">
+<p>L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle devra permettre de débiter, créditer un compte soit par virement c’est à dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet.<br></p>
+</div>
+<div class="paragraph data-line-31">
+<p>Nous produirons des documentations portant sur la gestion du projet mais aussi de la documentation technique et dédiée à l&#8217;utilisateur.<br></p>
+</div>
+<div class="paragraph data-line-33">
+<p>Toutes les documentations seront disponibles sur Github dans un dossier prévu à cet effet.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-36">
+<h2 id="_2_analyse_de_lexistant">2. Analyse de l&#8217;existant</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-37">
+<p>Dans la version existante, l&#8217;utilisateur peut être d&#8217;un des status suivants : guichetier ou chef d&#8217;agence.
+Dans la version existante, le guichetier peut :</p>
+</div>
+<div class="ulist data-line-40">
+<ul>
+<li class="data-line-40">
+<p>Modifier une information client</p>
+</li>
+<li class="data-line-41">
+<p>Créer un nouveau client</p>
+</li>
+<li class="data-line-42">
+<p>Consulter un compte</p>
+</li>
+<li class="data-line-43">
+<p>Débiter un compte</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-45">
+<p>Et le chef d&#8217;agence peut :</p>
+</div>
+<div class="ulist data-line-47">
+<ul>
+<li class="data-line-47">
+<p>Rendre inactif un client</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-49">
+<p>L&#8217;application existante, développée en JAVA, possède déjà une interface graphique.<br>
+La base de données est déjà implémentée, son modèle est relationnel et elle fonctionne sous SQL3.<br></p>
+</div>
+<div class="imageblock text-center data-line-53">
+<div class="content">
+<img src="documentation_projet/usecase_v0.svg" alt="Diagramme" width="400" height="auto">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-57">
+<h2 id="_3_analyse_des_besoins">3. Analyse des besoins</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-58">
+<p>En partant de la version initiale, les éléments à ajouter sont les suivants :</p>
+</div>
+<div class="paragraph data-line-60">
+<p>Pour le guichetier :</p>
+</div>
+<div class="ulist data-line-62">
+<ul>
+<li class="data-line-62">
+<p>créer un compte</p>
+</li>
+<li class="data-line-63">
+<p>effectuer un virement de compte à compte</p>
+</li>
+<li class="data-line-64">
+<p>clôturer un compte</p>
+</li>
+<li class="data-line-65">
+<p>créditer un compte</p>
+</li>
+<li class="data-line-66">
+<p>refaire fonction Java .débiter()</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-68">
+<p>Chef d&#8217;agence :</p>
+</div>
+<div class="ulist data-line-70">
+<ul>
+<li class="data-line-70">
+<p>Gerer les employés <em>(CRUD)</em></p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center data-line-73">
+<div class="content">
+<img src="documentation_projet/usecase_v0_besoins.svg" alt="Diagramme" width="500" height="auto">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-75">
+<h2 id="_4_analyse_des_contraintes">4. Analyse des contraintes</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</div>
+</body>
+</html>
