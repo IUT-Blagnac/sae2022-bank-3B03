@@ -1,0 +1,48 @@
+# sae2022-bank-n30_b4nk
+sae2022-bank-n30_b4nk created by GitHub Classroom
+
+## Équipe :
+Mathéo PEPIN, Hugo CASTELL, Gabin MUNOZ
+
+Chef de projet : Gabin Munoz
+
+## Sujet :
+La banque DailyBank souhaite développer une application JAVA-Oracle de gestion des comptes clients pour remplacer plusieurs outils obsolètes. Ce développement s’inscrit dans le cadre de la restructuration de ses services bancaires et l’application sera déployée dans les 100 agences que compte son réseau. Vous travaillerez à partir d’une application existante « Daily Bank » qu’il faudra adapter aux nouveaux besoins de la banque.
+
+## Objectifs : 
+L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle devra permettre de débiter, créditer un compte soit par virement c’est à dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet.
+== Livrables
+
+[cols="1,2,2,5",options=header]
+|===
+| Date    | Nom         |  Lien                             | Retour
+| 03/04   | Gantt V1    |                                                              | 
+|         | CdC V1      |                                   |   
+|         | Suivi Projet |                                   | Votre repository doit faire apparaître clairement 3B02 votre nom de groupe et non N30 Bank.  Attention, il manque des issues notamment toutes celles liées au developpement de la V1 : qui code quoi ?  Organiser votre repository par version on s'y retrouvera mieux.            
+| 22/04  | CdC V2/V3 final|                                     |  
+|         | Gantt V2    |                               |     
+|         | Gantt V3 |         |     
+|         | Doc. Tec. V1 |        |    
+|         | Doc User V1    |        |
+|         | Recette V1  |                      | 
+|         | Suivi projet|   | 
+| 22/05   | Gantt V2  à jour    |       | 
+|         | Doc. Util. V1 |         |         
+|         | Doc. Tec. V1 |                |     
+|         | Code V1     |                     | 
+|         | Recette V1 |                      | 
+|         | Gantt V3 à jour   |                      | 
+|         | `jar` projet |    | 
+| 05/06   | Gantt V3 à Jour  |    |  
+|         | Doc. Util. V2 |         |           
+|         | Doc. Tec. V2 |    |     
+|         | Code V2     |                       |
+|         | Recette V2  |   |
+|         | `jar` projet |     |
+|12/06   | Gantt V3 à Jour  |    |  
+|         | Doc. Util. V3 |         |           
+|         | Doc. Tec. V3 |    |     
+|         | Code V3     |                       |
+|         | Recette V3  |   |
+|         | `jar` projet |     |
+|===
