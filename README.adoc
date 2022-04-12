@@ -18,7 +18,7 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 | Date    | Nom         |  Lien                             | Retour
 | 03/04   | Gantt V1    |                                                              | 
 |         | CdC V1      |                                   |   
-|         | Suivi Projet |                                   | Votre repository doit faire apparaître clairement 3B02 votre nom de groupe et non N30 Bank.  Attention, il manque des issues notamment toutes celles liées au developpement de la V1 : qui code quoi ?  Organiser votre repository par version on s'y retrouvera mieux.            
+|         | Suivi Projet |                                   | Votre repository doit faire apparaître clairement 3B02 votre nom de groupe et non N30 Bank.  Attention, il manque des issues notamment toutes celles liées au developpement de la V1 : qui code quoi ?  Organiser votre repository par version on s'y retrouvera mieux.     Je n'ai pas de commit de la part de Matéo ?       
 | 22/04  | CdC V2/V3 final|                                     |  
 |         | Gantt V2    |                               |     
 |         | Gantt V3 |         |     
