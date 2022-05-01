@@ -1,5 +1,5 @@
-# sae2022-bank-n30_b4nk
-sae2022-bank-n30_b4nk created by GitHub Classroom
+# sae2022-3B03
+sae2022-3B03 created by GitHub Classroom
 
 ## Équipe :
 Mathéo PEPIN, Hugo CASTELL, Gabin MUNOZ
