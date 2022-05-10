@@ -76,3 +76,14 @@ image::usecase_v0_besoins.svg[Diagramme, 500, auto]
 
 // SQL DEV etc...
 
+// techniques juridique et organisationnelle 
+
+concurrence :
+https://www.furious-squad.com/
+
+Outil de gestion des agences bancaires. 
+
+https://www.capterra.fr/directory/20008/banking-systems/software
+
+un résumé de toutes les solutions pour agence
+
