@@ -1,0 +1,25 @@
+@startuml usecase_v0_besoins
+left to right direction
+skinparam actorStyle awesome
+"Guichetier" as G
+"Chef d'agence" as C
+:G: -> (Modifier infos client)
+:G: -> (Créer un nouveau client)
+:G: -> (Consulter un compte)
+:G: -> (Débiter un compte)
+:G: -> (Créer un nouveau compte)
+:G: -> (Effectuer un virement de compte à compte)
+:G: -> (Clôturer un compte)
+:G: -> (Créditer un compte)
+:G: -> (Relevé mensuel en PDF)
+:G: -> (Gestion des prélèvements automatiques : CRUD)
+
+G <|-- C
+
+:C: --> (Rendre inactif un client)
+:C: --> (Gestion des employés : CRUD)
+:C: --> (Effectuer un débit exceptionnel)
+:C: --> (Simuler un emprunt)
+:C: --> (Simuler une assurance d'emprunt)
+
+@enduml
