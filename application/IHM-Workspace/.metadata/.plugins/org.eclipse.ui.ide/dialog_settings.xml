@@ -16,6 +16,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Etudiant\Documents\GitHub\sae2022-bank-3B03\application\Daily_Bank_V0.zip"/>
 			<item value="C:\Users\Etudiant\Documents\GitHub\sae2022-bank-3B03\application\main"/>
 			<item value="C:\Users\Etudiant\Downloads\TP1_step4.zip"/>
 			<item value="C:\Users\Etudiant\Downloads\TD2_debut"/>
