@@ -1,0 +1,10 @@
+.text-area {
+    -fx-text-area-background: green ;
+    -fx-focus-color: transparent;
+    -fx-text-box-border: transparent;
+}
+
+.text-area .content {
+	background-color: green;
+    -fx-background-color: green ;
+}

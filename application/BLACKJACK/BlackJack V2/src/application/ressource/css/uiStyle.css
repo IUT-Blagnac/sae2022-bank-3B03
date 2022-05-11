@@ -1,0 +1,21 @@
+ .dialog-pane{
+  background-color: #e6ffe6;
+  -fx-background-color: #e6ffe6;
+ }
+
+.dialog-pane:header .header-panel {
+  background-color: #d6ffd6;
+  -fx-background-color: #d6ffd6;
+}
+ 
+.text-area {
+    -fx-text-area-background: green ;
+    -fx-focus-color: transparent;
+    -fx-text-box-border: transparent;
+    -fx-text-fill: #73ff73;
+}
+
+.text-area .content {
+	background-color: green;
+    -fx-background-color: green ;
+}
