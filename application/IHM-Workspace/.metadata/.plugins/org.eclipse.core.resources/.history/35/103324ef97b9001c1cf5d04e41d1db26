@@ -1,0 +1,10 @@
+.label {
+	-fx-fill-text: #111111;
+}
+
+.insertblock{
+	-fx-background-color: #000000;
+	-fx-border-color: green;
+	-fx-border-radius: 10;
+	-fx-border-width: 3;
+}

@@ -1,0 +1,10 @@
+package version2;
+
+public class PlusMoinsApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

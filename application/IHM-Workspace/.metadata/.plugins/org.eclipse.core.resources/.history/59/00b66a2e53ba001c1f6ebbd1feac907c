@@ -1,0 +1,66 @@
+package gestclub.view;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import gestclub.model.Membre;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class SaisieMembreController implements Initializable {
+	
+	// Défintion des attributs de la classe
+	@FXML
+	private TextField txtNom;
+	@FXML
+	private TextField txtPrenom;
+	@FXML
+	private TextField txtVille;
+	
+	@FXML
+	private RadioButton radioButProspect;
+	@FXML
+	private RadioButton radioButMembre;
+	@FXML
+	private RadioButton radioButAncien;
+	
+	@FXML
+	private DatePicker datePickerInscription;
+	
+	@FXML
+	private TextArea textNotes;
+	
+	// Le stage
+	private Stage dialogStage;
+	
+	@FXML
+	private void actionOk() {
+		System.out.println("Ok on va ajouter un membre.");
+		Membre leMembre = new Membre(txtNom.getText(), txtPrenom.getText(), null, null, null, null)
+	}
+	
+	
+	/**
+	 * Action lancée lors du clic btn annuler
+	 */
+	@FXML
+	private void actionAnnuler() {
+		dialogStage.close();
+	}
+
+	public void setDialogStage(Stage dialogStage) {
+		this.dialogStage = dialogStage;
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

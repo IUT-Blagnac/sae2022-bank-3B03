@@ -1,0 +1,3 @@
+.label {
+	-fx-fill-text: #0000ff;
+}

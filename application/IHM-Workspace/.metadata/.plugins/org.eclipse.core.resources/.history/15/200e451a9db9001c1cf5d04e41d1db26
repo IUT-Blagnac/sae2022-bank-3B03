@@ -1,0 +1,60 @@
+package gestClub;
+
+import java.io.IOException;
+	
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+
+
+public class GestClubApp extends Application {
+	
+	private BorderPane rootPane;
+	private Stage primaryStage;
+	
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			
+			
+			// Création de la BorderPane
+			BorderPane vueSaisie;
+			// Création de la Scene
+			
+			Scene scene = new Scene(vueSaisie);
+			scene.getStylesheets().add(getClass().getResource("ressources/style.css").toExternalForm());
+			
+			
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("Gestclub App");
+			primaryStage.show();
+			
+		} catch(IOException e) {
+			System.out.println("Ressource FXML ou CSS non disponible");
+			System.exit(1);
+		}
+	}
+	
+	/**
+	 * Méthode permettant de charger la liste des membres
+	 */
+	public void loadListMembre() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation( GestClubApp.class.getResource("view/ListeMembre.fxml"));
+			
+			BorderPane vueListe = loader.load();
+			
+			this.rootPane.setCenter( vueListe );
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}

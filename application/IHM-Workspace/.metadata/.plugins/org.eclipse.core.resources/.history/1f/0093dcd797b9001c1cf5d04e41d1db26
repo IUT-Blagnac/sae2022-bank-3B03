@@ -1,0 +1,7 @@
+.label {
+	-fx-fill-text: #111111;
+}
+
+.insertblock{
+	-fx-background-color: #000000;
+}

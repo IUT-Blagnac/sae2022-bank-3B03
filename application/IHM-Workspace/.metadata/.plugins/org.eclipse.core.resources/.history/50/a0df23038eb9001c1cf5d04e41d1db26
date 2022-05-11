@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+
+
+.label {
+	-fx-fill-text: #000ff;
+}

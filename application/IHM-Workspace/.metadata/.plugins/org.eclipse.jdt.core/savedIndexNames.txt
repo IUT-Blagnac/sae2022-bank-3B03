@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Etudiant\Documents\GitHub\sae2022-bank-3B03\application\IHM-Workspace\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
