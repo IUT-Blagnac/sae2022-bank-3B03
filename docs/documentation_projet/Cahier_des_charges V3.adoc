@@ -116,14 +116,12 @@ WARNING: En contact avec des données bancaires et des données personnelles. L'
 NOTE: L'équipe en charge de la base de données est responsable de toute fuite de données éventuelle.
 
 == Brève analyse concurrentielle ==
-concurrence :
-https://www.furious-squad.com/
+Il est important de définir le cadre concurrentiel autour de ce projet. +
+En effet, cela a son importance dans l'objectif d'innovation et de différentiation des produits existants proposés par d'autres entreprises. +
+Parmi les entreprises concurrentes directes de notre produit, on peut retrouver l'entreprise "irisLink" qui innove dans les solutions logicielles de gestion d'agence bancaires et de comptes client. +
+https://www.irislink.com +
+On peut la définir comme concurrente directe car elle propose des solutions similaires à notre produit.
 
-Outil de gestion des agences bancaires. 
-
-https://www.capterra.fr/directory/20008/banking-systems/software
-
-un résumé de toutes les solutions pour agence
 
 == Annexe ==
 
