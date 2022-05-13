@@ -26,7 +26,7 @@ Les outils utilisés seront : +
 
 NOTE: Nous travaillons l'essentiel du temps hors des séances dédiées pour accélérer le rythme de production des documentations et du code. 
 
-L'équipe mettra en oeuvre ses capacités de développement JAVA, IHM et de gestion de base de données ORACLE.
+L'équipe mettra en oeuvre ses capacités de développement JAVA, IHM et de gestion de base de données ORACLE pour offrir le meilleur des services.
 
 === Objectifs ===
 L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle devra permettre de débiter, créditer un compte soit par virement c’est à dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet. +
@@ -35,30 +35,29 @@ Nous produirons des documentations portant sur la gestion du projet mais aussi d
 
 Toutes les documentations seront disponibles sur Github dans un dossier prévu à cet effet.
 
+WARNING: Voir Annexe pour plus d'informations sur les documentations.
 
 == Analyse de l'existant ==
 
-.*Version 1
+.*Version 0
 
+En partant de la version v.0, les éléments implémentés ont été :
 
-// ANALYSE EXISTANT = ANALYSE BESOINS DANS v1
+Pour le guichetier : 
 
-Dans la version existante, l'utilisateur peut être d'un des status suivants : guichetier ou chef d'agence.
-Dans la version existante, le guichetier peut :
+* Création d'un compte
+* Effectuer un virement de compte à compte
+* Clôturartion d'un compte
+* Crédit d'un compte
+* Mise à jour de la fonction Java .débiter()
 
-** Modifier une information client
-** Créer un nouveau client
-** Consulter un compte
-** Débiter un compte
+Chef d'agence :
 
-Et le chef d'agence peut :
+* Gerer les employés _(CRUD)_
 
-** Rendre inactif un client
+L'application existante, développée en JAVA, possède déjà une interface graphique, qui a été mise à jour. +
+La base de données est déjà implémentée, son modèle est relationnel et elle fonctionne sous SQL3 mais son mot de passe a été sécurisée et ses requêtes, optimisées. +
 
-L'application existante, développée en JAVA, possède déjà une interface graphique. +
-La base de données est déjà implémentée, son modèle est relationnel et elle fonctionne sous SQL3. +
-
-// METTRE DIAGRAMME V1
 [.text-center]
 image::usecase_v0.svg[Diagramme, 400, auto]
 
@@ -87,7 +86,11 @@ Le but de toutes ces modifications est de rendre automatiques les tâches quotid
 
 // V2 DIAGRAMME
 [.text-center]
-image::usecase_v0_besoins.svg[Diagramme, 500, auto]
+image::usecase_v2_besoins.svg[Diagramme, 500, auto]
+
+.*Version 3
+Dans un objectif à terme, nous espérons optimiser au maximum l'utilisation de la base de données.
+Dans le même temps, nous réflechissons à refonte graphique complète de l'application.
 
 == Analyse des contraintes ==
 
@@ -96,15 +99,23 @@ Contraintes techniques :
 * Encodage en UTF-8
 * IDE Visual Studio / Eclipse
 * Base de données relationnelle en état cohérent
+* Refonte IHM dans le but de rendre plus esthétique l'application
 
 Contraintes de gestion :
-* Rédaction de documentation
+* Rédaction d'une documentation utilisateur et technique détaillée
 * Durée totale du projet de 11 semaines
 * Durée alouée au développement de 5 semaines
 
-// juridique et organisationnelle 
+Contraintes juridiques :
+* Manipulation de données bancaires
+* Accès aux mots de passe de tiers, de clients
+* Manipulation de données sensibles des clients
 
-== GABIN ==
+WARNING: En contact avec des données bancaires et des données personnelles. L'équipe informatique est soumise au RGPD.
+
+NOTE: L'équipe en charge de la base de données est responsable de toute fuite de données éventuelle.
+
+== Brève analyse concurrentielle ==
 concurrence :
 https://www.furious-squad.com/
 
@@ -114,3 +125,28 @@ https://www.capterra.fr/directory/20008/banking-systems/software
 
 un résumé de toutes les solutions pour agence
 
+== Annexe ==
+
+=== Rédaction et documents ===
+Ce document fut entièrement rédigé par *Hugo CASTELL* et *Gabin MUNOZ*, membres de l'équipe de développement de l'application. +
+Diagrammes UML par *Hugo CASTELL* +
+Diagrammes de Gantt par *Matéo PEPIN*
+
+=== Calendrier des livrables ===
+
+[%header,format=csv]
+|===
+|Nom du livrable,Date de rendu
+|Documentation technique v1.0,Semaine 20
+|Documentation utilisateur v1.0,Semaine 20
+|Cahier de tests v2.0,Semaine 20
+|Mise à jour du Gantt,Semaine 20
+|Documentation technique v2.0,Semaine 22
+|Documentation utilisateur v2.0,Semaine 22
+|Cahier de tests v3.0,Semaine 22
+|Mise à jour du Gantt,Semaine 22
+|Livraison finale,Semaine 23
+|Chiffrage du projet,Semaine 23
+|Soutenance Orale,Semaine 24
+|Bilan du projet,Semaine 24
+|===
