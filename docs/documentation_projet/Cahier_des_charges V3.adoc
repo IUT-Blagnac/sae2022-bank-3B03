@@ -37,7 +37,12 @@ Toutes les documentations seront disponibles sur Github dans un dossier prévu �
 
 
 == Analyse de l'existant ==
-// ANALYSE EXISTANT = ANALYSE BESOINS DANS v1 
+
+.*Version 1
+
+
+// ANALYSE EXISTANT = ANALYSE BESOINS DANS v1
+
 Dans la version existante, l'utilisateur peut être d'un des status suivants : guichetier ou chef d'agence.
 Dans la version existante, le guichetier peut :
 
@@ -80,16 +85,26 @@ Chef d'agence :
 Le but de toutes ces modifications est de rendre automatiques les tâches quotidiennes du chef.
 
 
-
+// V2 DIAGRAMME
 [.text-center]
 image::usecase_v0_besoins.svg[Diagramme, 500, auto]
 
-== 4. Analyse des contraintes ==
+== Analyse des contraintes ==
 
-// SQL DEV etc...
+Contraintes techniques :
+* JRE 1.8 (JDK 1.8 pour le développement)
+* Encodage en UTF-8
+* IDE Visual Studio / Eclipse
+* Base de données relationnelle en état cohérent
 
-// techniques juridique et organisationnelle 
+Contraintes de gestion :
+* Rédaction de documentation
+* Durée totale du projet de 11 semaines
+* Durée alouée au développement de 5 semaines
 
+// juridique et organisationnelle 
+
+== GABIN ==
 concurrence :
 https://www.furious-squad.com/
 
