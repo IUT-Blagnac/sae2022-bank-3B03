@@ -1,6 +1,6 @@
 :stylesheet: CDCU.css
 
-= *CAHIER DES CHARGES*
+= *CAHIER DES CHARGES V2/3*
 Hugo CASTELL - Gabin MUNOZ - Matéo PEPIN
 v3.0 {localdate}
 :sectnums:
