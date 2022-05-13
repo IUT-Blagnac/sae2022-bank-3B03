@@ -37,6 +37,7 @@ Toutes les documentations seront disponibles sur Github dans un dossier prévu �
 
 
 == Analyse de l'existant ==
+// ANALYSE EXISTANT = ANALYSE BESOINS DANS v1 
 Dans la version existante, l'utilisateur peut être d'un des status suivants : guichetier ou chef d'agence.
 Dans la version existante, le guichetier peut :
 
@@ -52,32 +53,33 @@ Et le chef d'agence peut :
 L'application existante, développée en JAVA, possède déjà une interface graphique. +
 La base de données est déjà implémentée, son modèle est relationnel et elle fonctionne sous SQL3. +
 
+// METTRE DIAGRAMME V1
 [.text-center]
 image::usecase_v0.svg[Diagramme, 400, auto]
 
 Le chef d'agence se place au dessus hiérarchiquement du guichetier, voilà pour pourquoi il hérite de ses droits et en possède d'autres, cette fois-ci propres à lui.
 
 == Analyse des besoins ==
+
+.*Version 2
 En partant de la version précédente, les éléments finaux seront :
 
 Pour le guichetier : 
 
-* créer un compte
-* effectuer un virement de compte à compte
-* clôturer un compte
-* créditer un compte
-* refaire fonction Java .débiter()
+* Générer un relevé mensuel d'un compte en PDF
+* Gérer (_CRUD_) les prélèvements automatiques
+
+Toutes ces modifications doivent permettre de rendre les fonctionnalités l'application plus complète.
 
 Chef d'agence :
 
-* Gerer les employés : 
-** Création d'un employé
-** Modification d'un employé
-** Suppression d'un employé
-** Accès aux informations d'un employé
-* Rendre inactif un client 
+* Effectuer un débit exceptionnel
+* Simuler un emprunt
+* Simuler une assurance d'emprunt
 
-NOTE: Il est important de noter qu'on ne doit pas supprimer un client pour des raisons juridiques. Il faut le garder en base de données.
+Le but de toutes ces modifications est de rendre automatiques les tâches quotidiennes du chef.
+
+
 
 [.text-center]
 image::usecase_v0_besoins.svg[Diagramme, 500, auto]
