@@ -77,6 +77,8 @@ public class ComptesManagement {
 				
 				acc.insertCompte(compte);
 
+				// if JAMAIS vrai
+				// existe pour compiler les catchs dessous
 				if (Math.random() < -1) {
 					throw new ApplicationException(Table.CompteCourant, Order.INSERT, "todo : test exceptions", null);
 				}
