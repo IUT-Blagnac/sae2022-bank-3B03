@@ -170,12 +170,13 @@ public class AccessCompteCourant {
 
 			Connection con = LogToDatabase.getConnexion();
 
-			String query = "INSERT INTO COMPTECOURANT VALUES (" + "seq_id_compte.NEXTVAL" + ", "	+ "?" + ", " + "?" + ", " + "?" + ", " + "?" + ")";
+			String query = "INSERT INTO COMPTECOURANT VALUES (" + "?" + ", " + "?" + ", " + "?" + ", " + "?" + ", " + "?" + ")";
 			PreparedStatement pst = con.prepareStatement(query);
-			pst.setInt(1, compte.debitAutorise); // ajout du debitAutorise du comtpe dans la requête
-			pst.setDouble(2, compte.solde); // ajout du solde du comtpe dans la requête
-			pst.setInt(3, compte.idNumCli); // ajout du idNumCli du client du comtpe dans la requête
-			pst.setString(4, compte.estCloture);
+			pst.setInt(1, compte.idNumCompte); // ajout du numéro du comtpe dans la requête
+			pst.setInt(2, compte.debitAutorise); // ajout du debitAutorise du comtpe dans la requête
+			pst.setDouble(3, compte.solde); // ajout du solde du comtpe dans la requête
+			pst.setInt(4, compte.idNumCli); // ajout du idNumCli du client du comtpe dans la requête
+			pst.setString(5, compte.estCloture);
  
 
 			System.err.println(query);
@@ -189,7 +190,7 @@ public class AccessCompteCourant {
 						"Insert anormal (insert de moins ou plus d'une ligne)", null, result);
 			}
 
-			query = "SELECT seq_id_compte.CURRVAL from DUAL";
+			query = "SELECT seq_id_comptecourant.CURRVAL from DUAL";
 
 			System.err.println(query);
 			PreparedStatement pst2 = con.prepareStatement(query);
