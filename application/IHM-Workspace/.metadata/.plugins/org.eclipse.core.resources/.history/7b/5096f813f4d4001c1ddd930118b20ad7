@@ -171,7 +171,7 @@ public class AccessCompteCourant {
 			Connection con = LogToDatabase.getConnexion();
 
 			String query = "INSERT INTO COMPTECOURANT VALUES (" + "seq_id_comptecourant.NEXTVAL" + ", "
-					+ "?" + ", " + "?" + ", " + "?" + ", " + "?" + ", " + "?" + ")";
+					+ "?" + ", " + "?" + ", " + "?" + ", " + "?" + ")";
 			PreparedStatement pst = con.prepareStatement(query);
 			pst.setInt(1, compte.idNumCompte); // ajout du numéro du comtpe dans la requête
 			pst.setInt(2, compte.debitAutorise); // ajout du debitAutorise du comtpe dans la requête

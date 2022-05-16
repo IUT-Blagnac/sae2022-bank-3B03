@@ -71,6 +71,10 @@ public class ComptesManagement {
 		compte = cep.doCompteEditorDialog(this.clientDesComptes, null, EditionMode.CREATION);
 		if (compte != null) {
 			try {
+				// Temporaire jusqu'à implémentation
+				compte = null;
+				AlertUtilities.showAlert(this.primaryStage, "En cours de développement", "Non implémenté",
+						"Enregistrement réel en BDD du compe non effectué\nEn cours de développement", AlertType.ERROR);
 				
 				AccessCompteCourant acc = new AccessCompteCourant();
 				

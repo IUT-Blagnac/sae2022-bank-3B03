@@ -206,7 +206,7 @@ public class AccessCompteCourant {
 
 			// client.idNumCli = numCliBase;
 		} catch (SQLException e) {
-			throw new DataAccessException(Table.CompteCourant, Order.INSERT, "Erreur accès", e);
+			throw new DataAccessException(Table.Client, Order.INSERT, "Erreur accès", e);
 		}
 	}
 }
