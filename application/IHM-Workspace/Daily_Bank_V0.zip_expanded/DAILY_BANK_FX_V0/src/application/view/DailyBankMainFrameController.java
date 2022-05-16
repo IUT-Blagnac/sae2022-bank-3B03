@@ -154,6 +154,7 @@ public class DailyBankMainFrameController implements Initializable {
 	private void doEmployeOption() {
 		AlertUtilities.showAlert(this.primaryStage, "Gestion des Employé", "En cours de développement",
 				"Livraison prévue\nEn juin 2022", AlertType.INFORMATION);
+		this.dbmf.gestionEmployes() ;
 	}
 
 	private void actionQuitterBD() {
