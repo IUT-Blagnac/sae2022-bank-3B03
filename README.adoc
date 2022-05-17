@@ -2,7 +2,7 @@
 sae2022-3B03 created by GitHub Classroom
 
 ## Équipe :
-Mathéo PEPIN, Hugo CASTELL, Gabin MUNOZ
+Matéo PEPIN, Hugo CASTELL, Gabin MUNOZ
 
 Chef de projet : Gabin Munoz
 
