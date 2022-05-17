@@ -123,25 +123,23 @@ public class ComptesManagement {
 
 		if (button == ButtonType.OK) {
 		    System.out.println("Ok suppression");
-		    suppr = true;
 		} 
 		else if (button == ButtonType.CANCEL) {
-		    System.out.println("Annulation");
-		    suppr = false;
+		    System.out.println("On annule et on fait rien");
 		}
 		else {
 		    System.out.println("Annulation");
-		    suppr = false;
 		}
 		
-		// on fait l'OP sur la BD en conséquence 
+		suppr = false;
+		
 		if (suppr == true) {
 			try {
 				
 				// enregistrement du nouveau compte en BDD
 				AccessCompteCourant acc = new AccessCompteCourant();
 				
-				acc.supprCompte(compte);
+				acc.insertCompte(compte);
 
 				if (Math.random() < -1) {
 					throw new ApplicationException(Table.CompteCourant, Order.INSERT, "todo : test exceptions", null);

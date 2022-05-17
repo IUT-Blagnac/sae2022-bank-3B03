@@ -134,6 +134,8 @@ public class ComptesManagement {
 		    suppr = false;
 		}
 		
+		
+		
 		// on fait l'OP sur la BD en conséquence 
 		if (suppr == true) {
 			try {
