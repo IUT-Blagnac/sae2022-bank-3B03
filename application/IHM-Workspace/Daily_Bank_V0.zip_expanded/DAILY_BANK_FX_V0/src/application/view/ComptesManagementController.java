@@ -137,8 +137,10 @@ public class ComptesManagementController implements Initializable {
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
 			this.btnVoirOpes.setDisable(false);
+			this.btnSupprCompte.setDisable(false);
 		} else {
 			this.btnVoirOpes.setDisable(true);
+			this.btnSupprCompte.setDisable(true);
 		}
 	}
 }
