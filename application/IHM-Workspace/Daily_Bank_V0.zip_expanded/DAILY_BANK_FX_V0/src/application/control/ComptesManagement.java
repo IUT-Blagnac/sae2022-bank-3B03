@@ -1,6 +1,7 @@
 package application.control;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import application.DailyBankApp;
 import application.DailyBankState;
@@ -10,7 +11,9 @@ import application.tools.StageManagement;
 import application.view.ComptesManagementController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -65,11 +68,72 @@ public class ComptesManagement {
 		om.doOperationsManagementDialog();
 	}
 
+	/**
+	 * Méthode de création du compte, se lance lors du clic sur 'créer un compte'
+	 * @return
+	 */
 	public CompteCourant creerCompte() {
 		CompteCourant compte;
 		CompteEditorPane cep = new CompteEditorPane(this.primaryStage, this.dbs);
 		compte = cep.doCompteEditorDialog(this.clientDesComptes, null, EditionMode.CREATION);
 		if (compte != null) {
+			try {
+				
+				// enregistrement du nouveau compte en BDD
+				AccessCompteCourant acc = new AccessCompteCourant();
+				
+				acc.insertCompte(compte);
+
+				if (Math.random() < -1) {
+					throw new ApplicationException(Table.CompteCourant, Order.INSERT, "todo : test exceptions", null);
+				}
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+				ed.doExceptionDialog();
+				this.primaryStage.close();
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+				ed.doExceptionDialog();
+			}
+		}
+		return compte;
+	}
+	
+	/**
+	 * Méthode de suppression du compte, se lance lors du clic sur 'supprimer un compte'
+	 * @param compteCourant 
+	 * @return
+	 */
+	public CompteCourant supprCompte(CompteCourant compte) {
+		boolean suppr;
+		// création d'un new pane à la suite de l'action
+		CompteEditorPane cep = new CompteEditorPane(this.primaryStage, this.dbs);
+		//
+		//compte = cep.doCompteEditorDialog(this.clientDesComptes, null, EditionMode.SUPPRESSION);
+		
+		// affichage de l'alerte
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Suppression du compte");
+		alert.setHeaderText("Suppression d'un compte.");
+		alert.setResizable(false);
+		alert.setContentText("Voulez-vous vraiment supprimer le compte numéro [" + compte.idNumCompte + "] du client " + compte.idNumCli + " ?");
+
+		Optional<ButtonType> result = alert.showAndWait();
+		ButtonType button = result.orElse(ButtonType.CANCEL);
+
+		if (button == ButtonType.OK) {
+		    System.out.println("Ok suppression");
+		} 
+		else if (button == ButtonType.CANCEL) {
+		    System.out.println("On annule et on fait rien");
+		}
+		else {
+		    System.out.println("Annulation");
+		}
+		
+		suppr = false;
+		
+		if (suppr == true) {
 			try {
 				
 				// enregistrement du nouveau compte en BDD

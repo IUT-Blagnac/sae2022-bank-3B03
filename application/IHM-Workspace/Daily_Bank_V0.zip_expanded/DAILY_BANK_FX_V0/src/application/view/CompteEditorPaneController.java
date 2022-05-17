@@ -76,7 +76,7 @@ public class CompteEditorPaneController implements Initializable {
 			return null;
 		// break;
 		case SUPPRESSION:
-			AlertUtilities.showAlert(this.primaryStage, "Non implémenté", "Suppression de compte n'est pas implémenté",
+			AlertUtilities.showAlert(this.primaryStage, "Suppression du compte", "Suppression de compte n'est pas implémenté",
 					null, AlertType.ERROR);
 			return null;
 		// break;

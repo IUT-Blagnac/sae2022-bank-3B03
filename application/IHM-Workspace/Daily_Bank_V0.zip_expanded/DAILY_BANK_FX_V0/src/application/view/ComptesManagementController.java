@@ -109,6 +109,11 @@ public class ComptesManagementController implements Initializable {
 
 	@FXML
 	private void doSupprimerCompte() {
+		System.out.println("suppression du compte");
+		// on récupère l'indice actuel
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		// on récupère le numéro du compte associé à l'indice
+		this.cm.supprCompte(this.olCompteCourant.get(selectedIndice));
 	}
 
 	@FXML
