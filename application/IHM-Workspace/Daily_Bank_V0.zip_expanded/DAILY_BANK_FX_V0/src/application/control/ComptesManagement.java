@@ -45,7 +45,7 @@ public class ComptesManagement {
 			this.primaryStage.initOwner(_parentStage);
 			StageManagement.manageCenteringStage(_parentStage, this.primaryStage);
 			this.primaryStage.setScene(scene);
-			this.primaryStage.setTitle("Gestion des employés");
+			this.primaryStage.setTitle("Gestion des comptes");
 			this.primaryStage.setResizable(false);
 
 			this.cmc = loader.getController();
