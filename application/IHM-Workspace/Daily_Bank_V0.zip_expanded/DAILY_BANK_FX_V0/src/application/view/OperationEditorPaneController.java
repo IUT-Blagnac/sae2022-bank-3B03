@@ -49,19 +49,21 @@ public class OperationEditorPaneController implements Initializable {
 	public Operation displayDialog(CompteCourant cpte, CategorieOperation mode) {
 		this.categorieOperation = mode;
 		this.compteEdite = cpte;
+		
+		String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
+				+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
+				+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
+		
+		ObservableList<String> list = FXCollections.observableArrayList();
+		
 
 		switch (mode) {
 		case DEBIT:
-
-			String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
-					+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
-					+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
 			this.lblMessage.setText(info);
 
-			this.btnOk.setText("Effectuer Débit");
+			this.btnOk.setText("Effectuer débit");
 			this.btnCancel.setText("Annuler débit");
 
-			ObservableList<String> list = FXCollections.observableArrayList();
 
 			for (String tyOp : ConstantesIHM.OPERATIONS_DEBIT_GUICHET) {
 				list.add(tyOp);
@@ -70,11 +72,20 @@ public class OperationEditorPaneController implements Initializable {
 			this.cbTypeOpe.setItems(list);
 			this.cbTypeOpe.getSelectionModel().select(0);
 			break;
+			
 		case CREDIT:
-			AlertUtilities.showAlert(this.primaryStage, "Non implémenté", "Modif de compte n'est pas implémenté", null,
-					AlertType.ERROR);
-			return null;
-		// break;
+			this.lblMessage.setText(info);
+
+			this.btnOk.setText("Effectuer crédit");
+			this.btnCancel.setText("Annuler crédit");
+
+			for (String tyOp : ConstantesIHM.OPERATIONS_CREDIT_GUICHET) {
+				list.add(tyOp);
+			}
+
+			this.cbTypeOpe.setItems(list);
+			this.cbTypeOpe.getSelectionModel().select(0);
+			break;
 		}
 
 		// Paramétrages spécifiques pour les chefs d'agences
@@ -122,21 +133,23 @@ public class OperationEditorPaneController implements Initializable {
 
 	@FXML
 	private void doAjouter() {
+		double montant;
+		String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
+				+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
+				+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
+		this.lblMessage.setText(info);
+		String typeOp = this.cbTypeOpe.getValue();
+		
 		switch (this.categorieOperation) {
 		case DEBIT:
 			// règles de validation d'un débit :
 			// - le montant doit être un nombre valide
 			// - et si l'utilisateur n'est pas chef d'agence,
 			// - le débit ne doit pas amener le compte en dessous de son découvert autorisé
-			double montant;
 
 			this.txtMontant.getStyleClass().remove("borderred");
 			this.lblMontant.getStyleClass().remove("borderred");
 			this.lblMessage.getStyleClass().remove("borderred");
-			String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
-					+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
-					+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
-			this.lblMessage.setText(info);
 
 			try {
 				montant = Double.parseDouble(this.txtMontant.getText().trim());
@@ -148,7 +161,7 @@ public class OperationEditorPaneController implements Initializable {
 				this.txtMontant.requestFocus();
 				return;
 			}
-			if (this.compteEdite.solde - montant < this.compteEdite.debitAutorise) {
+			if ((this.compteEdite.solde - montant) < this.compteEdite.debitAutorise) {
 				info = "Dépassement du découvert ! - Cpt. : " + this.compteEdite.idNumCompte + "  "
 						+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
 						+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
@@ -159,13 +172,26 @@ public class OperationEditorPaneController implements Initializable {
 				this.txtMontant.requestFocus();
 				return;
 			}
-			String typeOp = this.cbTypeOpe.getValue();
 			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCli, typeOp);
 			this.primaryStage.close();
 			break;
+			
 		case CREDIT:
-			// ce genre d'operation n'est pas encore géré
-			this.operationResultat = null;
+			this.txtMontant.getStyleClass().remove("borderred");
+			this.lblMontant.getStyleClass().remove("borderred");
+			this.lblMessage.getStyleClass().remove("borderred");
+
+			try {
+				montant = Double.parseDouble(this.txtMontant.getText().trim());
+				if (montant <= 0)
+					throw new NumberFormatException();
+			} catch (NumberFormatException nfe) {
+				this.txtMontant.getStyleClass().add("borderred");
+				this.lblMontant.getStyleClass().add("borderred");
+				this.txtMontant.requestFocus();
+				return;
+			}
+			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCli, typeOp);
 			this.primaryStage.close();
 			break;
 		}
