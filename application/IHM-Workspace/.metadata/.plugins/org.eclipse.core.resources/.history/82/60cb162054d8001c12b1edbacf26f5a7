@@ -79,7 +79,7 @@ public class OperationsManagementController implements Initializable {
 	@FXML
 	private Button btnCredit;
 	@FXML
-	private Button btnVirement;
+	private Button btnCredit;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -112,16 +112,11 @@ public class OperationsManagementController implements Initializable {
 	@FXML
 	private void doAutre() {
 	}
-	
-	@FXML
-	private void doVirement() {
-	}
 
 	private void validateComponentState() {
 		// Non implémenté => désactivé
 		this.btnCredit.setDisable(false);
 		this.btnDebit.setDisable(false);
-		this.btnVirement.setDisable(false);
 	}
 
 	private void updateInfoCompteClient() {

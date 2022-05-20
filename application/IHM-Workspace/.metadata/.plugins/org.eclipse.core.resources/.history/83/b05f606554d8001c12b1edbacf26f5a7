@@ -114,7 +114,7 @@ public class OperationsManagementController implements Initializable {
 	}
 	
 	@FXML
-	private void doVirement() {
+	private void virement() {
 	}
 
 	private void validateComponentState() {

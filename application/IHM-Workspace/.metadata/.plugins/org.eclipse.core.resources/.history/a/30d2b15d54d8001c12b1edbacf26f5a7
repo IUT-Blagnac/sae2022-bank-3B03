@@ -112,10 +112,6 @@ public class OperationsManagementController implements Initializable {
 	@FXML
 	private void doAutre() {
 	}
-	
-	@FXML
-	private void doVirement() {
-	}
 
 	private void validateComponentState() {
 		// Non implémenté => désactivé
