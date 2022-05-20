@@ -52,22 +52,27 @@ public class EmployesManagement {
 	}
 	
 	public Employe nouvelEmploye() {
+		Client client;
 		Employe employe ;
 		EmployeEditorPane eep = new EmployeEditorPane(this.primaryStage, this.dbs);
+		ClientEditorPane cep = new ClientEditorPane(this.primaryStage, this.dbs);
+		client = cep.doClientEditorDialog(null, EditionMode.CREATION);
 		employe = eep.doEmployeEditorDialog(null, EditionMode.CREATION);
 		if (employe != null) {
 			try {
+				AccessClient ac = new AccessClient();
 				AccessEmploye acs = new AccessEmploye();
-				acs.insertEmploye(employe);
+				ac.insertClient(client);
+				acs.
 			} catch (DatabaseConnexionException e) {
 				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
 				ed.doExceptionDialog();
 				this.primaryStage.close();
-				employe = null;
+				client = null;
 			} catch (ApplicationException ae) {
 				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
 				ed.doExceptionDialog();
-				employe = null;
+				client = null;
 			}
 		}
 		return employe;

@@ -78,9 +78,9 @@ public class AccessEmploye {
 	}
 	
 	/**
-	 * Insertion d'un Employé.
+	 * Insertion d'un client.
 	 *
-	 * @param employe IN/OUT Tous les attributs IN sauf idEmploye en OUT
+	 * @param client IN/OUT Tous les attributs IN sauf idNumCli en OUT
 	 * @throws RowNotFoundOrTooManyRowsException
 	 * @throws DataAccessException
 	 * @throws DatabaseConnexionException
@@ -99,7 +99,7 @@ public class AccessEmploye {
 			pst.setString(3, employe.droitsAccess);
 			pst.setString(4, employe.login) ;
 			pst.setString(5, employe.motPasse);
-			pst.setInt(6, employe.idAg);
+			pst.setInt(6, client.idAg);
 
 			System.err.println(query);
 
@@ -112,20 +112,20 @@ public class AccessEmploye {
 						"Insert anormal (insert de moins ou plus d'une ligne)", null, result);
 			}
 
-			query = "SELECT seq_id_employe.CURRVAL from DUAL";
+			query = "SELECT seq_id_client.CURRVAL from DUAL";
 
 			System.err.println(query);
 			PreparedStatement pst2 = con.prepareStatement(query);
 
 			ResultSet rs = pst2.executeQuery();
 			rs.next();
-			int numEmpBase = rs.getInt(1);
+			int numCliBase = rs.getInt(1);
 
 			con.commit();
 			rs.close();
 			pst2.close();
 
-			employe.idEmploye = numEmpBase;
+			client.idNumCli = numCliBase;
 		} catch (SQLException e) {
 			throw new DataAccessException(Table.Client, Order.INSERT, "Erreur accès", e);
 		}

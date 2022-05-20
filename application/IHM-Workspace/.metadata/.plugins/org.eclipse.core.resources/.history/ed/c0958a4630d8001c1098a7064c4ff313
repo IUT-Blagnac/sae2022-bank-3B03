@@ -78,9 +78,9 @@ public class AccessEmploye {
 	}
 	
 	/**
-	 * Insertion d'un Employé.
+	 * Insertion d'un client.
 	 *
-	 * @param employe IN/OUT Tous les attributs IN sauf idEmploye en OUT
+	 * @param client IN/OUT Tous les attributs IN sauf idNumCli en OUT
 	 * @throws RowNotFoundOrTooManyRowsException
 	 * @throws DataAccessException
 	 * @throws DatabaseConnexionException
