@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.data.CompteCourant;
+import model.data.transports.CompteCourantData;
 import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
 import model.orm.exception.ManagementRuleViolation;
@@ -18,7 +19,61 @@ public class AccessCompteCourant {
 
 	public AccessCompteCourant() {
 	}
+	
+	/**
+	 * Recherche des comptes paramétrée (tous/un seul par id/par nom-prénom).
+	 * 
+	 * Renvoie tous les comptes existants si pas de paramètres.
+	 * 
+	 * @author Hugo CASTELL
+	 * 
+	 * @param numCompte
+	 * @param debutNom
+	 * @param debutPrenom
+	 * @return une ArrayList de CompteCourantData
+	 */
+	public ArrayList<CompteCourantData> getAllComptes(int numCompte, String debutNom, String debutPrenom){
+		ArrayList<CompteCourantData> ac = new ArrayList<>();
+		String ifNumCompte = "";
+		String ifDebutNom = "";
+		String ifDebutPrenom = "";
+		try {
+			Connection con = LogToDatabase.getConnexion();
+			if(numCompte != -1) ifNumCompte = " AND c.idNumCompte = " + numCompte;
+			if(!debutNom.equals("")) ifDebutNom = " AND cl.nom LIKE '" + debutNom + "%'";
+			if(!debutPrenom.equals("")) ifDebutPrenom = " AND cl.prenom LIKE '" + debutPrenom + "%'";
+			String requete = "SELECT c.idNumCompte, c.solde, c.debitautorise, cl.nom, cl.prenom"
+					+        " FROM comptecourant c, client cl"
+					+        " WHERE c.idnumcli = cl.idnumcli"
+					+        ifNumCompte
+					+		 ifDebutNom
+					+		 ifDebutPrenom
+					+        " AND c.estcloture <> 'O';";
+			
+			PreparedStatement pst = con.prepareStatement(requete);
+			
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				int idNumCompte = rs.getInt("idNumCompte");
+				double solde = rs.getDouble("solde");
+				int debitAutorise = rs.getInt("debitAutorise");
+				String nom = rs.getString("nom");
+				String prenom = rs.getString("prenom");
 
+				ac.add(new CompteCourantData(idNumCompte, solde, debitAutorise, nom, prenom));
+			}
+			rs.close();
+			pst.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (DatabaseConnexionException e) {
+			e.printStackTrace();
+		}
+		
+		return ac;
+		
+	}
+	
 	/**
 	 * Recherche des CompteCourant d'un client à partir de son id.
 	 *

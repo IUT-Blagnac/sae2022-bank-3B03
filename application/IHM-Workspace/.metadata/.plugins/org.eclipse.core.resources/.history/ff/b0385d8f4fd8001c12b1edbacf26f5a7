@@ -1,0 +1,9 @@
+package model.data.transports;
+
+public class CompteCourantData {
+
+	public CompteCourantData(int idNumCompte, double solde, int debitAutorise, String estCloture, int idNumCliTROUVE) {
+		// TODO Auto-generated constructor stub
+	}
+	private 
+}

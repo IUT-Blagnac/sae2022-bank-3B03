@@ -13,7 +13,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.data.Client;
+import model.data.CompteCourant;
+import model.data.transports.CompteCourantData;
 import model.orm.AccessClient;
+import model.orm.AccessCompteCourant;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
 
@@ -123,5 +126,13 @@ public class ClientsManagement {
 			listeCli = new ArrayList<>();
 		}
 		return listeCli;
+	}
+	
+	
+	public ArrayList<CompteCourantData> getComptesData(int _numCompte, String _debutNom, String _debutPrenom) {
+		ArrayList<CompteCourantData> listeComptes;
+		AccessCompteCourant ac = new AccessCompteCourant();
+		listeComptes = ac.getAllComptes(_numCompte, _debutNom, _debutPrenom);
+		return listeComptes;
 	}
 }

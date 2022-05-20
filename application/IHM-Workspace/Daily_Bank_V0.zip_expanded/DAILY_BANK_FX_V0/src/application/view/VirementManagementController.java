@@ -15,7 +15,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import model.data.Client;
+import model.data.transports.CompteCourantData;
 
 public class VirementManagementController implements Initializable{
 	
@@ -27,7 +27,7 @@ public class VirementManagementController implements Initializable{
 	private Stage primaryStage;
 
 	// Données de la fenêtre
-	private ObservableList<Client> olc;
+	private ObservableList<CompteCourantData> olc;
 	
 	// Manipulation de la fenêtre
 		public void initContext(Stage _primaryStage, ClientsManagement _cm, DailyBankState _dbstate) {
@@ -41,9 +41,9 @@ public class VirementManagementController implements Initializable{
 			this.primaryStage.setOnCloseRequest(e -> this.closeWindow(e));
 
 			this.olc = FXCollections.observableArrayList();
-			this.lvClients.setItems(this.olc);
-			this.lvClients.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-			this.lvClients.getFocusModel().focus(-1);
+			this.lvComptes.setItems(this.olc);
+			this.lvComptes.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+			this.lvComptes.getFocusModel().focus(-1);
 		}
 
 		public void displayDialog() {
@@ -64,11 +64,10 @@ public class VirementManagementController implements Initializable{
 	@FXML
 	private TextField txtPrenom;
 	@FXML
-	private ListView<Client> lvClients;
+	private ListView<CompteCourantData> lvComptes;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -112,12 +111,12 @@ public class VirementManagementController implements Initializable{
 		// numCompte != -1 => recherche sur numCompte
 		// numCompte != -1 et debutNom non vide => recherche nom/prenom
 		// numCompte != -1 et debutNom vide => recherche tous les clients
-		ArrayList<Client> listeCli;
-		listeCli = this.cm.getlisteComptes(numCompte, debutNom, debutPrenom);
+		ArrayList<CompteCourantData> listeComptes;
+		listeComptes = this.cm.getComptesData(numCompte, debutNom, debutPrenom);
 
 		this.olc.clear();
-		for (Client cli : listeCli) {
-			this.olc.add(cli);
+		for (CompteCourantData compte : listeComptes) {
+			this.olc.add(compte);
 		}
 	}
 
