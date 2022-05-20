@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;clientsmanagement.fxml&apos; to &apos;clientsmanagement.fxml&apos;&#x0D;&#x0A;- Original project: &apos;DAILY_BANK_FX_V0&apos;&#x0D;&#x0A;- Destination element: &apos;clientsmanagement.fxml&apos;&#x0D;&#x0A;- Original element: &apos;clientsmanagement.fxml&apos;" description="Copy file" element1="src/application/view/clientsmanagement.fxml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1653042263317" target="/DAILY_BANK_FX_V0/src/application/view/clientsmanagement.fxml" units="0" version="1.0"/>
+</session>

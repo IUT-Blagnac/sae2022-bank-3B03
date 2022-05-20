@@ -1,0 +1,32 @@
+package application.view;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import model.data.Client;
+
+public class VirementManagementController implements Initializable{
+
+	@FXML
+	private TextField txtNum;
+	@FXML
+	private TextField txtNom;
+	@FXML
+	private TextField txtPrenom;
+	@FXML
+	private ListView<Client> lvClients;
+	@FXML
+	private 
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

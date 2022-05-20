@@ -1,0 +1,49 @@
+package application.view;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import application.DailyBankState;
+import application.control.ClientsManagement;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import model.data.Client;
+
+public class VirementManagementController implements Initializable{
+	
+	// Etat application
+	private DailyBankState dbs;
+	private ClientsManagement cm;
+
+	// Fenêtre physique
+	private Stage primaryStage;
+
+	// Données de la fenêtre
+	private ObservableList<Client> olc;
+
+	@FXML
+	private TextField txtNum;
+	@FXML
+	private TextField txtNom;
+	@FXML
+	private TextField txtPrenom;
+	@FXML
+	private ListView<Client> lvClients;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@FXML
+	private void doCancel() {
+		this.primaryStage.close();
+	}
+
+}

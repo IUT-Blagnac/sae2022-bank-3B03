@@ -1,0 +1,30 @@
+:stylesheet: doc.css
+
+= *DOCUMENTATION TECHNIQUE*
+Hugo CASTELL
+v1.0 {localdate}
+:nofooter:
+:toc: left
+:toc-title: Sommaire
+
+== Remarques et documents annexes ==
+
+.*Remarques
+Cette documentation technique est menée à être mise à jour ultérieurement. +
+Les informations qu'elle contient peuvent ne pas à être valables à l'heure où vous consultez le document.
+
+.*Documents annexes
+Si vous n'êtes pas sur le bon document, voici un tableau des documents disponibles. +
+
+[%header, format=csv]
+|===
+|Nom du document, Lien
+|===
+
+== Présentation de l'application ==
+
+== Architecture de l'application ==
+
+== Implémentation ==
+
+==  == 
