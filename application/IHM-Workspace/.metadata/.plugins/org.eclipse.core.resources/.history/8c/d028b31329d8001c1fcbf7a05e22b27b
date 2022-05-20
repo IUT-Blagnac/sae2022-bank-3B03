@@ -158,11 +158,11 @@ public class EmployeManagementController implements Initializable {
 	*/
 	
 	@FXML
-	private void doNouvelEmploye() {
-		Employe employe;
-		employe = this.em.nouvelEmploye();
-		if (employe != null) {
-			this.ole.add(employe);
+	private void doNouveauClient() {
+		Client client;
+		client = this.em.nouveauClient();
+		if (client != null) {
+			this.olc.add(client);
 		}
 	}
 	

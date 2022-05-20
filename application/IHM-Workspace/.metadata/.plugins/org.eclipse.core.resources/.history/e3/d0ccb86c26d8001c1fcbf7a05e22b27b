@@ -155,17 +155,16 @@ public class EmployeManagementController implements Initializable {
 	@FXML
 	private void doDesactiverClient() {
 	}
-	*/
-	
+
 	@FXML
-	private void doNouvelEmploye() {
-		Employe employe;
-		employe = this.em.nouvelEmploye();
-		if (employe != null) {
-			this.ole.add(employe);
+	private void doNouveauClient() {
+		Client client;
+		client = this.cm.nouveauClient();
+		if (client != null) {
+			this.olc.add(client);
 		}
 	}
-	
+	*/
 	private void validateComponentState() {
 		// Non implémenté => désactivé
 		this.btnDesacEmp.setDisable(true);

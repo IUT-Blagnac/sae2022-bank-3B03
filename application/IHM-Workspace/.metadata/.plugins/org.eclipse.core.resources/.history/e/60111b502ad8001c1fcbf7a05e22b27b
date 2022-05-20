@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import model.data.Client;
 import model.data.Employe;
 import model.orm.AccessClient;
-import model.orm.AccessEmploye;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
 
@@ -51,19 +50,17 @@ public class EmployesManagement {
 		
 	}
 	
-	public Employe nouvelEmploye() {
+	public Client nouvelEmploye() {
 		Client client;
 		Employe employe ;
 		EmployeEditorPane eep = new EmployeEditorPane(this.primaryStage, this.dbs);
 		ClientEditorPane cep = new ClientEditorPane(this.primaryStage, this.dbs);
 		client = cep.doClientEditorDialog(null, EditionMode.CREATION);
-		employe = eep.doEmployeEditorDialog(null, EditionMode.CREATION);
-		if (employe != null) {
+		if (client != null) {
 			try {
 				AccessClient ac = new AccessClient();
-				AccessEmploye acs = new AccessEmploye();
+
 				ac.insertClient(client);
-				acs.
 			} catch (DatabaseConnexionException e) {
 				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
 				ed.doExceptionDialog();
@@ -75,7 +72,7 @@ public class EmployesManagement {
 				client = null;
 			}
 		}
-		return employe;
+		return client;
 	}
 	
 	public void doEmployeManagementDialog() {

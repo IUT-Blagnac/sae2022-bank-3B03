@@ -27,4 +27,8 @@
     <fullyQualifiedTypeName name="gestclub.view.ListeMembresController"/>
     <fullyQualifiedTypeName name="gestclub.view.SaisieMembreController"/>
     <fullyQualifiedTypeName name="application.control.EmployesManagement"/>
+    <fullyQualifiedTypeName name="application.view.EmployeEditorPaneController"/>
+    <fullyQualifiedTypeName name="application.view.EmployeManagementController"/>
+    <fullyQualifiedTypeName name="model.data.Employe"/>
+    <fullyQualifiedTypeName name="model.orm.AccessEmploye"/>
 </qualifiedTypeNameHistroy>
