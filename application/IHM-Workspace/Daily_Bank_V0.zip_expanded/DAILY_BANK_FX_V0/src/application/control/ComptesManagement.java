@@ -113,16 +113,16 @@ public class ComptesManagement {
 		
 		// affichage de l'alerte
 		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-		alert.setTitle("Suppression du compte");
-		alert.setHeaderText("Suppression d'un compte.");
+		alert.setTitle("Clôture du compte");
+		alert.setHeaderText("Clôture d'un compte.");
 		alert.setResizable(false);
-		alert.setContentText("Voulez-vous vraiment supprimer le compte numéro [" + compte.idNumCompte + "] du client " + compte.idNumCli + " ?");
+		alert.setContentText("Voulez-vous vraiment clôturer le compte numéro [" + compte.idNumCompte + "] du client " + compte.idNumCli + " ?");
 
 		Optional<ButtonType> result = alert.showAndWait();
 		ButtonType button = result.orElse(ButtonType.CANCEL);
 
 		if (button == ButtonType.OK) {
-		    System.out.println("Ok suppression");
+		    System.out.println("Ok cloture");
 		    suppr = true;
 		} 
 		else if (button == ButtonType.CANCEL) {
@@ -141,7 +141,7 @@ public class ComptesManagement {
 				// enregistrement du nouveau compte en BDD
 				AccessCompteCourant acc = new AccessCompteCourant();
 				
-				acc.supprCompte(compte);
+				acc.clotCompte(compte.idNumCompte);
 
 				if (Math.random() < -1) {
 					throw new ApplicationException(Table.CompteCourant, Order.INSERT, "todo : test exceptions", null);

@@ -209,50 +209,50 @@ public class AccessCompteCourant {
 	}
 	
 	/**
-	 * Suppression d'un compte courant.
+	 * Cloture d'un compte courant.
 	 * Création d'un nouveau compte courant
 	 *
 	 * @param CompteCourant compte
 	 */
-	public void supprCompte(CompteCourant compte)
+	public void clotCompte(int numcompte)
 			throws RowNotFoundOrTooManyRowsException, DataAccessException, DatabaseConnexionException {
 		try {
 
 			Connection con = LogToDatabase.getConnexion();
 
-			String query = "DELETE FROM COMPTECOURANT WHERE IDNUMCOMPTE = '?'";
-			PreparedStatement pst = con.prepareStatement(query);
-			pst.setInt(1, compte.idNumCompte); // suppression du compte à ce numéro
-
- 
-
-			System.err.println(query);
+			// déclaration de la requête SQL
+			String query = "UPDATE COMPTECOURANT SET ESTCLOTURE = 'O' WHERE IDNUMCOMPTE = " + "?";;
+			// préparation de la requête avec les pramètres
+			PreparedStatement pst = con.prepareStatement(query); 
+			// ajout des paramètres à la requête
+			pst.setInt(1, numcompte);
+			System.out.println("Requête crée : " + pst);
 
 			int result = pst.executeUpdate();
 			pst.close();
 
 			if (result != 1) {
 				con.rollback();
-				throw new RowNotFoundOrTooManyRowsException(Table.CompteCourant, Order.INSERT,
-						"Insert anormal (insert de moins ou plus d'une ligne)", null, result);
+				throw new RowNotFoundOrTooManyRowsException(Table.CompteCourant, Order.UPDATE,
+						"Delete anormal (insert de moins ou plus d'une ligne)", null, result);
 			}
 
-			query = "SELECT seq_id_compte.CURRVAL from DUAL";
+			//query = "SELECT seq_id_compte.CURRVAL from DUAL";
 
-			System.err.println(query);
-			PreparedStatement pst2 = con.prepareStatement(query);
+			//System.err.println(query);
+			//PreparedStatement pst2 = con.prepareStatement(query);
 
-			ResultSet rs = pst2.executeQuery();
-			rs.next();
+			//ResultSet rs = pst2.executeQuery();
+			//rs.next();
 			//int numCliBase = rs.getInt(1);
 
 			con.commit();
-			rs.close();
-			pst2.close();
+			//rs.close();
+			//pst2.close();
 
 			// client.idNumCli = numCliBase;
 		} catch (SQLException e) {
-			throw new DataAccessException(Table.CompteCourant, Order.INSERT, "Erreur accès", e);
+			throw new DataAccessException(Table.CompteCourant, Order.UPDATE, "Erreur accès", e);
 		}
 	}
 }
