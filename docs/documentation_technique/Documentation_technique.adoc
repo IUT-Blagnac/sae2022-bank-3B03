@@ -1,0 +1,88 @@
+:stylesheet: doc.css
+
+= *DOCUMENTATION TECHNIQUE*
+Hugo CASTELL
+v1.0 {localdate}
+:nofooter:
+:toc: left
+:toc-title: Sommaire
+
+== Remarques et documents annexes ==
+
+.*Remarques*
+Cette documentation technique est menée à être mise à jour ultérieurement. +
+Les informations qu'elle contient peuvent ne pas à être valables à l'heure où vous consultez le document.
+
+.*Documents annexes*
+Si vous n'êtes pas sur le bon document, voici un tableau des documents disponibles. +
+
+[%header, format=csv]
+|===
+Nom du document, Lien
+|===
+
+== Présentation de l'application ==
+
+L'application se décompose en deux parties distinctes : +
+Une application JAVA qui sert d'interface en relation avec une base de données.
+
+=== Application JAVA ===
+
+=== Base de données : ORACLE ===
+
+==== Justification du choix de la technologie ====
+
+La base de données utilise une structure _relationnelle_. +
+Nous avons choisi cette technologie pour deux avantages de développement : +
+
+* L'utilisation de la librairie JDBC
+* La necessité de stocker des opérations :
+** Il sera plus simple de parcourir les opérations grâce à SQL plutôt qu'avec une base NoSQL comme CassandraDB ou MongoDB
+* Stabilité de la technologie car venant d'ORACLE
+* Très documenté
+
+==== Schéma Logique ====
+
+[%header, format=dsv]
+|===
+Table: Attributs
+AGENCEBANCAIRE: ([underline]#idAg#, nomAg, adressePostaleAg, idEmployeChefAg#)
+ASSURANCEEMPRUNT: ([underline]#idAss#, tauxAss, tauxCouv, idEmprunt#)
+CLIENT: ([underline]#idNumClient#, nom, prenom, adressePostale, email, telephone, estInactif, idAg#)
+COMPTECOURANT: ([underline]#idNumCompte#, debitAutorise, solde, idNumCli#, estCloture)
+EMPLOYE: ([underline]#idEmploye#, nom, prenom, droitsAccess, login, motPasse, idAg#)
+EMPRUNT: ([underline]#idEmprunt#, tauxEmp, capitalEmp, dureeEmp, dateDebEmp, idNumCli#)
+OPERATION: ([underline]#idOperation#, montant, dateOp, dateValeur, idNumCompte#, idTypeOp#)
+PRELEVEMENTAUTOMATIQUE: ([underline]#idPrelev#, montant, dateRecurrente, beneficiaire, idNumCompte#)
+TYPEOPERATION: ([underline]#idTypeOp#)
+|===
+
+==== Rappel de sécurité ====
+
+.*Contraintes juridiques*
+
+Nous manipulons des données personnelles, plus précisement des données bancaires. +
+*Le RGPD s'applique donc.* +
+
+.*Utilisation dans un programme JAVA*
+
+Les données doivent être manipulées dans des classes qui assurent leur intégrité. +
+Pour cela, aucune donnée ne doit transiter : +
+
+* Dans un attribut instancié en _public_
+* Dans une sortie standard
+* Dans une exception
+* Si elle n'est pas adressée à une personne compétente pour la recevoir (Limiter l'accès aux données en fonction du statut dans l'entreprise de l'utilisateur)
+
+
+== Architecture de l'application ==
+
+== Implémentation ==
+
+=== Crédit / Débit d'un compte ===
+
+Référent : _Hugo CASTELL_
+
+=== Virement compte-à-compte ===
+
+Référent : _Hugo CASTELL_
