@@ -111,8 +111,12 @@ application.control : Contient les fonctionnalités de l’application
 
 === Crédit / Débit d'un compte ===
 
-Référent : _Hugo CASTELL_
+Référent : _Hugo CASTELL_ + +
+
+Débiter et créditer un compte fonctionnent selon des procédures stockées dans la base de données. +
+Elles prennent en paramètre
 
 === Virement compte-à-compte ===
 
-Référent : _Hugo CASTELL_
+Référent : _Hugo CASTELL_ + +
+
