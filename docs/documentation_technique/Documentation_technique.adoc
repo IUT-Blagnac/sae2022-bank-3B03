@@ -77,6 +77,36 @@ Pour cela, aucune donnée ne doit transiter : +
 
 == Architecture de l'application ==
 
+L'application est conçu selon le principe MCV (_Model View Controller_). +
+Ainsi toute l'application se structure autour :
+
+* Modèle : Base de données ORACLE
+* Vue : Interface graphique JAVAFX
+* Contrôleur : Fonctionnalités de l'application JAVA
+
+=== Structure des paquets ===
+
+Paquets du _Modèle_ :
+****
+model.data : Contient les classes de données.
+
+model.orm : Contient les classes de gestion des données.
+
+model.orm.exception : Contient les classes d’exceptions.
+****
+Paquets de la _Vue_ : 
+****
+application.view : Contient les classes de l’interface graphique
+****
+Paquets du _Contrôleur_ : 
+****
+application.tools : Contient contenant les outils de l’application.
+
+application.control : Contient les fonctionnalités de l’application
+****
+
+
+
 == Implémentation ==
 
 === Crédit / Débit d'un compte ===
