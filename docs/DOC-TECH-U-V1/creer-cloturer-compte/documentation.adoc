@@ -1,4 +1,4 @@
-= *Documentation technique*
+= *Documentation*
 Créer et clôturer un compte
 Rédigé par Gabin Munoz
 
@@ -8,7 +8,7 @@ Rédigé par Gabin Munoz
 Un client peut posséder plusieurs comptes en banque. En tant que guichetier ou chef d'agence, vous poiuvez aisément créer un nouveau compte pour un client via le panneau d'administration de celui-ci. Pour ce faire, suivez les étapes décrites ci-dessous. 
 
 ===== Étape 1 =====
-Pour accéder à la gestiond es comptes de client, accédez à votre panel client. Sélectionnez ensuite le client à qui vous voulez ajouter un compte, puis cliquez sur le bouton "Comptes client" dans le panneau latéral droit. 
+Pour accéder à la gestion des comptes de client, accédez à votre panel client. Sélectionnez ensuite le client à qui vous voulez ajouter un compte, puis cliquez sur le bouton "Comptes client" dans le panneau latéral droit. 
 
 image::./cpt-client.png[]
 
@@ -27,8 +27,6 @@ Pour créer un nouveau compte, cliquez sur le bouton "Nouveau compte" sur le pan
 image::./nouv-compte.png[]
 
 ===== Étape 3 =====
-
-
 
 Renseignez maintenant les paramètres associés au nouveau compte que vous souhaitez créer, et validez les modifications une fois terminé. 
 
