@@ -1,4 +1,4 @@
-= *Documentation*
+= *Documentation création et clôture d'un compte client*
 Créer et clôturer un compte
 Rédigé par Gabin Munoz
 
