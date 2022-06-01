@@ -32,7 +32,7 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Gantt V2    |       https://cdn.discordapp.com/attachments/973866793208799272/975067242159042570/unknown.png                        |     
 |         | Gantt V3 |    https://cdn.discordapp.com/attachments/973866793208799272/975067340033126400/unknown.png     |     
 |         | Doc. Tec. V1 |   doc technique créer-cloturer compte Gabin M. : https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/041ed97ccb473384afb82308e1832b43ca9e9d1f/docs/DOC-TECH-U-V1/creer-cloturer-compte/documentation.adoc     |    
-|         | Doc User V1    |    doc utilisateur créer-cloturer compte Gabin M. : https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/041ed97ccb473384afb82308e1832b43ca9e9d1f/docs/DOC-TECH-U-V1/creer-cloturer-compte/documentation.adoc    |
+|         | Doc User V1    |    doc utilisateur créer-cloturer compte Gabin M. : https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/041ed97ccb473384afb82308e1832b43ca9e9d1f/docs/DOC-TECH-U-V1/creer-cloturer-compte/documentation.adoc    |ne pas mettre les aspects techniques dans cette doc. Faire un sommaire de vos fonctionnalités. Un seul contributeur à ce jour ... 
 |         | Recette V1  |                      | 
 |         | Suivi projet|   | 
 | 22/05   | Gantt V2  à jour    |       | 
