@@ -504,3 +504,20 @@ _AccessCompteCourant.java_
 Dans cette méthode, on rédige une requête SQL de modification de table, passe en paramètre le numéro de compte, modifie sa colonne 'EstCloture' et envoie la requête. 
 
 Cela a pour effet de définir le compte actuellement sélectionné comme "estCloture" dans la BDD. +
+
+=== Chef d'agences : CRUD ===
+
+Référent : _Matéo PEPIN_ + +
+
+Cette fonctionnalité consistait à donner la possibilité aux chefs d'agence de créer, lire, modifier et supprimer des emploés de la base de donée. Pour cela, j'ai ajouté 2 fenêtres très similaires à celle utilisée pour créer des comptes, ces fenêtres sont accessible seulement par les chefs d'agence car le bouton est désactivé pour les guichetiers. +
+
+image::./img/btn_gestion_employe_disable_code.png[]
+
+Dans la première page, celle qui s'ouvre depuis le menu principal, un bouton "Rechercher" fait, comme pour les comptes un appel à la méthode "rechercher" qui interroge la base de donées afin de récupérer la liste des employes et leurs informations dans la base de données (processus effectué dans la classe "model.orm.AccessEmploye"). +
+
+image::./img/insert_employe_code.png[]
+
+On peut également supprimer un employé de la liste, ce qui a également pour effet de le supprimer de la base de données (processus smilaire à la recherche). +
+
+La deuxième page est ouverte avec la méthode "nouvel employe", appelée par les boutons "créer employé" et "modifier employé" qui ouvre une nouvelle fenêtre javaFX. Elle est très semblable à celle des comptes que ce soit en fonctionnement ou en apparence, elle permet d'ajouter un nouvel employe ou d'en modifier un existant. +
+
