@@ -15,6 +15,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.data.CompteCourant;
 import model.data.transports.CompteCourantData;
 
 public class VirementManagementController implements Initializable{
@@ -30,8 +31,7 @@ public class VirementManagementController implements Initializable{
 	private ObservableList<CompteCourantData> olc;
 	
 	// Manipulation de la fenêtre
-		public void initContext(Stage _primaryStage, ClientsManagement _cm, DailyBankState _dbstate) {
-			this.cm = _cm;
+		public void initContext(Stage _primaryStage, DailyBankState _dbstate) {
 			this.primaryStage = _primaryStage;
 			this.dbs = _dbstate;
 			this.configure();
@@ -46,7 +46,7 @@ public class VirementManagementController implements Initializable{
 			this.lvComptes.getFocusModel().focus(-1);
 		}
 
-		public void displayDialog() {
+		public void displayDialog(CompteCourant cpte) {
 			this.primaryStage.showAndWait();
 		}
 

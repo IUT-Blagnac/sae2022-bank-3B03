@@ -110,15 +110,19 @@ public class OperationsManagement {
 		return op;
 	}
 	
-	public Operation effectuerVirement() {
+	public Operation effectuerVirement(OperationsManagementController omc) {
 
-		OperationEditorPane oep = new OperationEditorPane(this.primaryStage, this.dbs);
-		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
+		VirementAmountSelectionPane vasp = new VirementAmountSelectionPane(primaryStage, omc);
+		vasp.doVirementEditorDialog();
+		if(omc.isValid(omc.getMontantAVirer())) {
+			VirementManagementPane vmp = new VirementManagementPane(primaryStage, dbs);
+		}
+		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.DEBIT);
 		if (op != null) {
 			try {
 				AccessOperation ao = new AccessOperation();
 
-				ao.insertCredit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
+				ao.insertVirement(this.compteConcerne.idNumCompte, idNumCompteCredite, op.montant);
 
 			} catch (DatabaseConnexionException e) {
 				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);

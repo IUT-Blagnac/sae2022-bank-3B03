@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import application.DailyBankState;
 import application.control.OperationsManagement;
+import application.control.VirementAmountSelectionPane;
+import application.control.VirementManagementPane;
 import application.tools.NoSelectionModel;
 import application.tools.PairsOfValue;
 import javafx.collections.FXCollections;
@@ -35,6 +37,17 @@ public class OperationsManagementController implements Initializable {
 	private Client clientDuCompte;
 	private CompteCourant compteConcerne;
 	private ObservableList<Operation> olOperation;
+	
+	// Variables dédiées au virement
+	private double montantAVirer;
+
+	public double getMontantAVirer() {
+		return montantAVirer;
+	}
+
+	public void setMontantAVirer(double montantAVirer) {
+		this.montantAVirer = montantAVirer;
+	}
 
 	// Manipulation de la fenêtre
 	public void initContext(Stage _primaryStage, OperationsManagement _om, DailyBankState _dbstate, Client client, CompteCourant compte) {
@@ -65,6 +78,11 @@ public class OperationsManagementController implements Initializable {
 		this.doCancel();
 		e.consume();
 		return null;
+	}
+	
+	public boolean isValid(double montant) {
+		if(montant > 0 && montant <= this.compteConcerne.solde) return true;
+		return false;
 	}
 
 	// Attributs de la scene + actions
@@ -115,6 +133,11 @@ public class OperationsManagementController implements Initializable {
 	
 	@FXML
 	private void doVirement() {
+		Operation op = this.om.effectuerVirement(this);
+		if (op != null) {
+			this.updateInfoCompteClient();
+			this.validateComponentState();
+		}
 	}
 
 	private void validateComponentState() {

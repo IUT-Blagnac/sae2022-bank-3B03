@@ -205,9 +205,9 @@ public class AccessOperation {
 	
 	/**
 	 * 
-	 * Enregistrement d'un crédit.
+	 * Enregistrement d'un virement.
 	 *
-	 * Se fait par procédure stockée : - Enregistre l'opération - Met à jour le solde du compte.
+	 * Se fait par procédure stockée : - Enregistre l'opération - Met à jour le solde des comptes.
 	 * 
 	 * @author Hugo CASTELL
 	 * 
@@ -232,9 +232,6 @@ public class AccessOperation {
 			// 1 -> valeur du premier paramètre, cf. déf procédure
 			call.setInt(2, idNumCompteCredite);
 			call.setDouble(3, montant);
-			// Paramètres out
-			call.registerOutParameter(4, java.sql.Types.INTEGER);
-			// 4 type du quatrième paramètre qui est déclaré en OUT, cf. déf procédure
 
 			call.execute();
 
