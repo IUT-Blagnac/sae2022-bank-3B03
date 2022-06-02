@@ -503,4 +503,4 @@ _AccessCompteCourant.java_
 
 Dans cette méthode, on rédige une requête SQL de modification de table, passe en paramètre le numéro de compte, modifie sa colonne 'EstCloture' et envoie la requête. 
 
-Cela a pour effet de définir le compte actuellement sélectionné comme "estCloture" dans la BDD.
+Cela a pour effet de définir le compte actuellement sélectionné comme "estCloture" dans la BDD. +
