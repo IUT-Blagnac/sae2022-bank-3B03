@@ -19,11 +19,10 @@ import model.data.Employe;
 public class EmployeEditorPane {
 
 	private Stage primaryStage;
-	private DailyBankState dbs;
-	private EmployeEditorPaneController ctrl;
+	private EmployeEditorPaneController eepc;
 
 	public EmployeEditorPane(Stage _parentStage, DailyBankState _dbstate) {
-		this.dbs = _dbstate ;
+
 		try {
 			FXMLLoader loader = new FXMLLoader(EmployeEditorPaneController.class.getResource("employeeditorpane.fxml"));
 			BorderPane root = loader.load();
@@ -39,8 +38,8 @@ public class EmployeEditorPane {
 			this.primaryStage.setTitle("Gestion d'un employe");
 			this.primaryStage.setResizable(false);
 
-			this.ctrl = loader.getController();
-			this.ctrl.initContext(this.primaryStage, this.dbs);
+			this.eepc = loader.getController();
+			this.eepc.initContext(this.primaryStage, _dbstate);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -48,6 +47,6 @@ public class EmployeEditorPane {
 	}
 
 	public Employe doEmployeEditorDialog(Employe employe, EditionMode em) {
-		return this.ctrl.displayDialog(employe, em);
+		return this.eepc.displayDialog(employe, em);
 	}
 }

@@ -43,7 +43,7 @@ public class EmployesManagement {
 			this.primaryStage.setResizable(false);
 
 			this.ctrl = loader.getController();
-			this.ctrl.initContext(this.primaryStage, this, dbs);
+			this.ctrl.initContext(primaryStage, this, dbs);
 
 		} catch (Exception e) {
 			e.printStackTrace();

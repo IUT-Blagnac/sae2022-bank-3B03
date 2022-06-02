@@ -108,7 +108,7 @@ public class AccessEmploye {
 
 			if (result != 1) {
 				con.rollback();
-				throw new RowNotFoundOrTooManyRowsException(Table.Employe, Order.INSERT,
+				throw new RowNotFoundOrTooManyRowsException(Table.Client, Order.INSERT,
 						"Insert anormal (insert de moins ou plus d'une ligne)", null, result);
 			}
 
@@ -127,7 +127,7 @@ public class AccessEmploye {
 
 			employe.idEmploye = numEmpBase;
 		} catch (SQLException e) {
-			throw new DataAccessException(Table.Employe, Order.INSERT, "Erreur accès", e);
+			throw new DataAccessException(Table.Client, Order.INSERT, "Erreur accès", e);
 		}
 	}
 }
