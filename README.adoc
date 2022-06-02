@@ -37,7 +37,7 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Suivi projet|   | 
 | 22/05   | Gantt V2  à jour    |       | 
 |         | Doc. Util. V1 |         |         
-|         | Doc. Tec. V1 |                |   link:retoursV1.adoc[Retours 01/06/2022 -- by JMB]  
+|         | Doc. Tec. V1 |       mettre lien         |   link:retoursV1.adoc[Retours 01/06/2022 -- by JMB]  
 |         | Code V1     |                     | 
 |         | Recette V1 |                      | 
 |         | Gantt V3 à jour   |                      | 
