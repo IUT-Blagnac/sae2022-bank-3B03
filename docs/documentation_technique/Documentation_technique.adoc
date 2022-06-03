@@ -119,18 +119,19 @@ Auteurs : _Hugo CASTELL et Gabin MUNOZ_
 
 == Architecture de l'application ==
 
--> Hugo, à continuer ici en mettant : 
+=== Architecture physique ===
 
+L'application, qui est une interface seulement, intéragit avec un serveur hébergeant la base de données ORACLE.
 
- *   Architecture générale (poste client, serveurs, …) et rôle de chaque élément
+Le serveur est hébergé sous le nom de domaine _oracle.iut-blagnac.fr_.
 
- *   Ressources externes (.jar, …) utilisées et rôles
+=== Ressources externes ===
+
+Lors du développement ont été utilisé les librairies _e(fx)clipse v3.7.0_ pour l'IHM et le _JRE jdk1.8.0-202_.
 
  *   Structuration en packages de l’application documentée. Principes retenus pour cette structuration
 
- *   Eléments essentiels à connaître, spécificités, … nécessaires à la mise en œuvre du développement. Cette partie peut être illustrée par un diagramme de séquence
-
-
+=== Eléments essentiels à connaître ===
 
 L'application est conçu selon le principe MCV (_Model View Controller_). +
 Ainsi toute l'application se structure autour :
