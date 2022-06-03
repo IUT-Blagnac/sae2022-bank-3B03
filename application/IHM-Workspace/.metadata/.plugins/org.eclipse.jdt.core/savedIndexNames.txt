@@ -6,7 +6,6 @@ INDEX VERSION 1.131+C:\Users\Etudiant\Documents\GitHub\sae2022-bank-3B03\applica
 3176445155.index
 1533619955.index
 1518221326.index
-1865797976.index.tmp
 3010998462.index
 3041421212.index
 806729469.index

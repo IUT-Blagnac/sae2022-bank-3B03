@@ -20,10 +20,16 @@
     <fullyQualifiedTypeName name="gestclub.model.EtatMembre"/>
     <fullyQualifiedTypeName name="javax.swing.text.html.ListView"/>
     <fullyQualifiedTypeName name="javafx.scene.control.ListView"/>
-    <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
     <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="gestclub.GestClubApp"/>
     <fullyQualifiedTypeName name="gestclub.model.Membre"/>
     <fullyQualifiedTypeName name="gestclub.view.ListeMembresController"/>
     <fullyQualifiedTypeName name="gestclub.view.SaisieMembreController"/>
+    <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
+    <fullyQualifiedTypeName name="application.view.VirementAmountSelectionController"/>
+    <fullyQualifiedTypeName name="application.control.VirementAmountSelectionPane"/>
+    <fullyQualifiedTypeName name="application.view.VirementManagementController"/>
+    <fullyQualifiedTypeName name="application.control.VirementManagementPane"/>
+    <fullyQualifiedTypeName name="application.view.OperationsManagementController"/>
+    <fullyQualifiedTypeName name="model.data.CompteCourant"/>
 </qualifiedTypeNameHistroy>
