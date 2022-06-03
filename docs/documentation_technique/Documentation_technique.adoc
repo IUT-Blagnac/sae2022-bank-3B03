@@ -58,6 +58,7 @@ OPERATION: ([underline]#idOperation#, montant, dateOp, dateValeur, idNumCompte#,
 PRELEVEMENTAUTOMATIQUE: ([underline]#idPrelev#, montant, dateRecurrente, beneficiaire, idNumCompte#)
 TYPEOPERATION: ([underline]#idTypeOp#)
 |===
+Auteur : _Hugo CASTELL_
 
 ==== Rappel de sécurité ====
 
@@ -76,6 +77,9 @@ Pour cela, aucune donnée ne doit transiter : +
 * Dans une exception
 * Si elle n'est pas adressée à une personne compétente pour la recevoir (Limiter l'accès aux données en fonction du statut dans l'entreprise de l'utilisateur)
 
+Auteur : _Hugo CASTELL_
+
+
 == Installation de l'application ==
 
 Si vous souhaitez installer l'application DailyBank sur votre machine, suivez le tutoriel ci-dessous. 
@@ -83,7 +87,7 @@ Si vous souhaitez installer l'application DailyBank sur votre machine, suivez le
 === Téléchargement === 
 [.underline]#Téléchargement et installation de Java# +
 
-Pour pouvoir utiliser l'application, vous devez avoir Java d'installé sur votre machine. Pour l'installer, vous pouvez suivre le lien officiel Java : https://www.java.com/fr/download/manual.jsp
+Pour pouvoir utiliser l'application, vous devez avoir Java **8** d'installé sur votre machine. Pour l'installer, vous pouvez suivre le lien officiel Java : https://www.java.com/fr/download/manual.jsp
 
 
 [.underline]#Téléchargement et installation de DailyBank# +
@@ -92,9 +96,26 @@ https://dailybank.fr/download
 
 === Lancement du .jar ===
 
-Une fois le téléchargement terminé, rendez-vous dans le dossier de téléchargement du .jar. Pour ouvrir le jar.
+Une fois le téléchargement terminé, rendez-vous dans le dossier de téléchargement du .jar. Pour ouvrir le jar. +
 
--> Hugo termine ça, explique la procédure d'installation
+Vérifiez que la variable d'environnement PATH du compte est bien situé sur le bin du java_8. +
+
+Dans une invite de commande, utilisez cette commande pour vérifier la version de Java : +
+
+[source,shell]
+----
+java --version
+----
+
+Une fois cela fait, vous pouvez utiliser cette commande pour lancer le jar :
+
+[source,shell]
+----
+java -jar DailyBank.jar
+----
+
+Auteurs : _Hugo CASTELL et Gabin MUNOZ_
+
 
 == Architecture de l'application ==
 
