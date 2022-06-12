@@ -171,22 +171,149 @@ Afin d'avoir un travail le plus productif possible, nous avons distribué les fo
 [%header, format=dsv]
 |===
 Fonctionnalité à implémenter : Développeur
-Création, Lecture, Modification, Suppression, (CRUD)  : Matéo Pépin
-Virement de compte à compte, créditer/débiter un compte : Hugo Castell
-Créer et clôturer un compte : Gabin Munoz
+Création, Lecture, Modification, Suppression, (CRUD)  : Matéo PEPIN
+Virement de compte à compte, créditer/débiter un compte : Hugo CASTELL
+Créer et clôturer un compte : Gabin MUNOZ
 |===
 
 === Crédit / Débit d'un compte ===
 
 Référent : _Hugo CASTELL_ +
 
+==== Documentation utilisateur ====
 
-Débiter et créditer un compte fonctionnent selon des procédures stockées dans la base de données. +
-Elles prennent en paramètre
+===== Étape 1 =====
+Connectez-vous et accédez au panneau de gestion des clients.
+Selectionnez un compte et accédez au panneau de gestion des comptes.
+
+===== Étape 2 =====
+Dans un second temps, accédez aux opérations du compte choisi.
+
+image::./img/gestionComptes.png[]
+
+===== Étape 3 =====
+Sur ce panneau, vous pouvez enregistrer un débit ou un crédit.
+
+image::./img/gestionOp.png[]
+
+===== Étape 3 =====
+Finalement, vous pouvez rentrer le montant et le type d'opération dans un dernier menu.
+
+image::./img/gestionOpDebitCredit.png[]
+
+==== Documentation technique (développeurs) ====
+
+Débiter et créditer un compte fonctionnent selon des procédures stockées dans la base de données sont presque identiques dans le code. +
+Elles prennent trois paramètres :
+** un numéro ID de compte
+** un montant
+** un type d'opération
+
+Nous n'en présenterons qu'une pour alléger la documentation.
+
+_AccessOperation.java_
+[source, java]
+----
+    /**
+    * 
+    * Enregistrement d'un crédit.
+    *
+    * Se fait par procédure stockée : - Enregistre l'opération - Met à jour le * solde du compte.
+    * 
+    * @author Hugo CASTELL
+    * 
+    * @param idNumCompte
+    * @param montant
+    * @param typeOp
+    * @throws DatabaseConnexionException
+    * @throws ManagementRuleViolation
+    * @throws DataAccessException
+    */
+public void insertCredit(int idNumCompte, double montant, String typeOp)
+        throws DatabaseConnexionException, ManagementRuleViolation, DataAccessException {
+    try {
+        Connection con = LogToDatabase.getConnexion();
+        CallableStatement call;
+
+        String q = "{call CREDITER (?, ?, ?, ?)}";
+        // les ? correspondent aux paramètres : cf. déf procédure (4 paramètres)
+        call = con.prepareCall(q);
+        // Paramètres in
+        call.setInt(1, idNumCompte);
+        // 1 -> valeur du premier paramètre, cf. déf procédure
+        call.setDouble(2, montant);
+        call.setString(3, typeOp);
+        // Paramètres out
+        call.registerOutParameter(4, java.sql.Types.INTEGER);
+        // 4 type du quatrième paramètre qui est déclaré en OUT, cf. déf procédure
+
+        call.execute();
+
+        int res = call.getInt(4);
+
+        if (res != 0) { // Erreur applicative
+            throw new ManagementRuleViolation(Table.Operation, Order.INSERT,
+                    "Erreur de règle de gestion : découvert autorisé dépassé", null);
+        }
+    } catch (SQLException e) {
+        throw new DataAccessException(Table.Operation, Order.INSERT, "Erreur accès", e);
+    }
+}
+----
+
+La liaison en IHM se fait par une fonction intermédiaire qui crée la nouvelle opération et qui y vérifie son type et son montant tout en établissant la connexion avec la base de données.
+
+_OperationsManagement.java_
+[source, java]
+----
+public Operation enregistrerCredit() {
+
+        OperationEditorPane oep = new OperationEditorPane(this.primaryStage, this.dbs);
+        Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
+        if (op != null) {
+            try {
+                AccessOperation ao = new AccessOperation();
+
+                ao.insertCredit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
+
+            } catch (DatabaseConnexionException e) {
+                ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+                ed.doExceptionDialog();
+                this.primaryStage.close();
+                op = null;
+            } catch (ApplicationException ae) {
+                ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+                ed.doExceptionDialog();
+                op = null;
+            }
+        }
+        return op;
+    }
+----
+
+Finalement en liaison avec l'action du bouton FXML dans le contrôleur.
+
+_OperationsManagementController.java_
+[source, java]
+----
+@FXML
+private void doCredit() {
+    Operation op = this.om.enregistrerCredit();
+    if (op != null) {
+        this.updateInfoCompteClient();
+        this.validateComponentState();
+    }
+}
+----
+
 
 === Virement compte-à-compte ===
 
 Référent : _Hugo CASTELL_ +
+
+**Cette fonctionnalité n'a pas été complétement implémentée à cause de problèmes techniques.** +
+**Utilisation de nouveaux Panes + utilisation Procédure stockée VIRER** +
+**Problème de controller initialisé null alors que reconnu dans Scene Builder**
 
 === Création / Clôture d'un compte ===
 
@@ -228,11 +355,11 @@ Paramètres disponibles :
 
 image::./img/parametre-ouv-compte.png[]
 
-=== Fonctionnement technique (développeurs) ===
+==== Fonctionnement technique (développeurs) ====
 
 Lors du clic sur le bouton de création du nouveau compte, plusieurs procédures sont appellées. 
 
-==== creerCompte ====
+===== creerCompte =====
 
 On récupère d'abord les données des inputs de la fenêtre d'ajout. Est ensuite appellée une méthode de création du client nommée 'creerCompte'. C'est une méthode de l'objet CompteCourant.
 
@@ -274,11 +401,11 @@ _CompteManagement.java_
 ---
 
 
-==== AccessCompteCourant ====
+===== AccessCompteCourant =====
 
 Cette méthode, après vérification de quelques exeptions appelle AccessCompteCourant dans l'objectif de faire appel aux méthodes de mofification de la base de données. 
 
-==== insertCompte ====
+===== insertCompte =====
 
 AccesCompteCourant possède la méthode insertCompte, son objectif est de rajouter un compte dans la BDD avec les paramètres passés.
 
@@ -341,9 +468,9 @@ Dans cette méthode, on rédige une requête SQL d'INSERT dans la table, passe e
 
 Cela a pour effet de créer un nouveau compte dans la BDD.
 
-== Clôture d'un compte ==
+=== Clôture d'un compte ===
 
-=== Documentation utilisateur ===
+==== Documentation utilisateur ====
 
 Un client peut posséder plusieurs comptes en banque. En tant que guichetier ou chef d'agence, vous pouvez aisément clôturer un compte pour un client via le panneau d'administration de celui-ci. Cela aura pour effet de le définir comme 'clôturé' dans la base de données. Celui-ci sera toujours visible, mais ne sera plus administrable. 
 Pour clôturer un compte, suivez les étapes décrites ci-dessous. 
@@ -378,7 +505,7 @@ image::./img/confirm.png[]
 Confirmez. Vous reviendrez alors sur l'écran précédent, où vous remarquerez que le compte précédemment sélectionné est maintenant clôturé. Félicitation !
 
 
-=== Fonctionnement technique (développeurs) ===
+==== Fonctionnement technique (développeurs) ====
 
 Lors du clic sur le bouton de clôture du nouveau compte, plusieurs procédures sont appellées. 
 
