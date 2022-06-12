@@ -39,7 +39,7 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Doc. Util. V1 |         |         
 |         | Doc. Tec. V1 |       https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/bb8a84c9ff709fbf7ebf882c23779cf256c397fb/docs/documentation_technique/Documentation_technique.adoc         |   link:retoursV1.adoc[Retours 01/06/2022 -- by JMB]  
 |         | Code V1     |                     | 
-|         | Recette V1 |                      | 
+|         | Recette V1 | cahier de recettes hugo castell : https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/main/docs/cahier_de_recettes/Cahier_de_recettes.adoc                      | 
 |         | Gantt V3 à jour   |                      | 
 |         | `jar` projet |    | 
 | 05/06   | Gantt V3 à Jour  |    |  
@@ -54,5 +54,5 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Code V3     |                       |
 |         | Recette V3  |   |
 |         | `jar` projet |     |
-|         | CHIFFRAGE | https://github.com/IUT-Blagnac/sae2022-bank-3B03/tree/main/docs/chiffrage
+|         | CHIFFRAGE | https://github.com/IUT-Blagnac/sae2022-bank-3B03/tree/main/docs/chiffrage |
 |===
