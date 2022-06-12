@@ -1,0 +1,29 @@
+= CAHIER DE RECETTES =
+Hugo CASTELL
+v1.0 - {localdate}
+:nofooter:
+:toc:
+:toc-title: Sommaire
+
+
+== Débit d'un compte ==
+
+Auteur : _Hugo CASTELL_
+
+[%header ,format=dsv]
+|===
+id Test:Nom Test:Nom cas d’utilisation:Conditions de satisfaction:Pré-conditions
+1:TestDébiterOK:Débiter un compte:Le compte à un solde de +100. On débite 50. Le nouveau solde est +50. On a créé une nouvelle opération. Et l’opération est dans la liste des opérations avec le bon montant et la bonne date.:Le compte est sélectionné
+2:TestDébiterDécouvertOK:Débiter un compte:Le compte à un solde de +100. On débite -150. Le découvert autorisé est de -100. Le nouveau solde est -50. On a créé une nouvelle opération Et l’opération est dans la liste des opérations avec le bon montant et la bonne date.:Le compte est sélectionné
+3:TestDébiterDécouvertNOK:Débiter un compte:Le compte à un solde de +100. On débite -250. Le découvert autorisé est de -100. Blocage ! + pop-up voir chef d’agence pour un débit exceptionnel !:Le compte est sélectionné
+|===
+
+== Crédit d'un compte
+
+Auteur : _Hugo CASTELL_
+
+[%header ,format=dsv]
+|===
+id Test:Nom Test:Nom cas d’utilisation:Conditions de satisfaction:Pré-conditions
+4:TestCréditerOK:Créditer un compte:Le compte à un solde de 0 On crédite de 2500. Le nouveau solde est 2500. On a créé une nouvelle opération. Et l’opération est dans la liste des opérations avec le bon montant et la bonne date.:Le compte est sélectionné
+|===
