@@ -54,5 +54,5 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Code V3     |                       |
 |         | Recette V3  |   |
 |         | `jar` projet |     |
-|12/06    | CHIFFRAGE | https://github.com/IUT-Blagnac/sae2022-bank-3B03/tree/main/docs/chiffrage
+|         | CHIFFRAGE | https://github.com/IUT-Blagnac/sae2022-bank-3B03/tree/main/docs/chiffrage
 |===
