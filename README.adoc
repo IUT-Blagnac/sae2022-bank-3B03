@@ -56,3 +56,5 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | `jar` projet |     |
 |         | CHIFFRAGE | https://github.com/IUT-Blagnac/sae2022-bank-3B03/tree/main/docs/chiffrage |
 |===
+
+Les gants V2 et V3 n'ont pas été mis à jours car nous n'avons pas réalisé ces versions.
