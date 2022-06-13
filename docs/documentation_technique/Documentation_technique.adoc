@@ -670,3 +670,5 @@ On peut également supprimer un employé de la liste, ce qui a également pour e
 
 La deuxième page est ouverte avec la méthode "nouvel employe", appelée par les boutons "créer employé" et "modifier employé" qui ouvre une nouvelle fenêtre javaFX. Elle est très semblable à celle des comptes que ce soit en fonctionnement ou en apparence, elle permet d'ajouter un nouvel employe ou d'en modifier un existant. +
 
+Ces fonctionnalités n'ont pas pu être implémentées en raison de nombreux problèmes technique que nous n'avons pas réussi à résoudre, malgré l'assistance que nous avons reçue et la quantité de temps passée à chercher à les résoudre.
+
