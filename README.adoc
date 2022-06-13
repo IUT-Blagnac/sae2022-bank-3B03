@@ -35,7 +35,7 @@ L’application doit permettre de gérer des comptes bancaires de dépôt pour d
 |         | Doc User V1    |    doc utilisateur créer-cloturer compte Gabin M. : https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/041ed97ccb473384afb82308e1832b43ca9e9d1f/docs/DOC-TECH-U-V1/creer-cloturer-compte/documentation.adoc    |ne pas mettre les aspects techniques dans cette doc. Faire un sommaire de vos fonctionnalités. Un seul contributeur à ce jour ... 
 |         | Recette V1  |                      | 
 |         | Suivi projet|   | 
-| 22/05   | Gantt V2  à jour    |       | 
+| 22/05   | Gantt V1  à jour    |    https://cdn.discordapp.com/attachments/731488210605047888/985821165924802580/unknown.pnghttps://cdn.discordapp.com/attachments/731488210605047888/985821165924802580/unknown.png   | 
 |         | Doc. Util. V1 |         |         
 |         | Doc. Tec. V1 |       https://github.com/IUT-Blagnac/sae2022-bank-3B03/blob/bb8a84c9ff709fbf7ebf882c23779cf256c397fb/docs/documentation_technique/Documentation_technique.adoc         |   link:retoursV1.adoc[Retours 01/06/2022 -- by JMB]  
 |         | Code V1     |                     | 
